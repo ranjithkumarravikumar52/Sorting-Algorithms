@@ -1,4 +1,4 @@
-package Main;
+package Client;
 
 import FixedDataRange.*;
 import RandomDataRange.*;
