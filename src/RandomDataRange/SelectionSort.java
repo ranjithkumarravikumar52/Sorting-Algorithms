@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sortingalgorithm.RandomDataRange;
+package RandomDataRange;
 
-import sortingalgorithm.Util.SwapElements;
+import Util.SwapElements;
 
 /**
  *

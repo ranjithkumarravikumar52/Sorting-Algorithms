@@ -1,4 +1,4 @@
-package sortingalgorithm.Util;
+package Util;
 
 /**
  * <p>Every Sort Algorithm is imagined as a Class. This class has two fields mandatory for any SortAlgorithm.</p>

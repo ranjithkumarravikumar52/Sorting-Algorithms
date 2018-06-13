@@ -1,4 +1,4 @@
-package sortingalgorithm.Util;
+package Util;
 
 public class SwapElements {
     /**

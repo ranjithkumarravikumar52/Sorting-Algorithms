@@ -1,7 +1,8 @@
-package sortingalgorithm.RandomDataRange;
+package RandomDataRange;
 
-import sortingalgorithm.Util.ArrayGenerator;
-import sortingalgorithm.Util.SortAlgorithm;
+
+import Util.ArrayGenerator;
+import Util.SortAlgorithm;
 
 /**
  * This class extends SortAlgorithm.

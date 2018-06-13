@@ -1,6 +1,6 @@
-package sortingalgorithm.RandomDataRange;
+package RandomDataRange;
 
-import sortingalgorithm.Util.SwapElements;
+import Util.*;
 
 /**
  * Inherits fields from the superclass SortAlgorithm

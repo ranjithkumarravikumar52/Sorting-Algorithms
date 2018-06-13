@@ -1,4 +1,4 @@
-package sortingalgorithm.Util;
+package Util;
 
 import java.util.Arrays;
 import java.util.Random;

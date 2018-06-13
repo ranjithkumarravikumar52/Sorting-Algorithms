@@ -1,10 +1,8 @@
-package sortingalgorithm.Main;
+package Main;
 
-import sortingalgorithm.FixedDataRange.CountingSort;
-import sortingalgorithm.FixedDataRange.RadixSort;
-import sortingalgorithm.RandomDataRange.*;
-import sortingalgorithm.Util.SortAlgorithm;
-
+import FixedDataRange.*;
+import RandomDataRange.*;
+import Util.*;
 import java.util.Arrays;
 
 //TODO once all the sort algorithms is cleaned, provide a way to implement in JAVA EE
@@ -14,14 +12,14 @@ public class App {
     public static void main(String[] args) {
 
         SortAlgorithm[] randomSortList = {new BubbleSort(), new InsertionSort(), new MergeSort(), new QuickSort(), new SelectionSort(), new ShellSort()};
-        for(int i = 0; i<randomSortList.length; i++){
+        for (int i = 0; i < randomSortList.length; i++) {
             randomSortClientModule(randomSortList[i]);
         }
 
         System.out.println();
 
         SortAlgorithm[] fixedSortList = {new CountingSort(), new RadixSort()};
-        for(int i = 0; i<fixedSortList.length; i++){
+        for (int i = 0; i < fixedSortList.length; i++) {
             fixedSortClientModule(fixedSortList[i]);
         }
     }

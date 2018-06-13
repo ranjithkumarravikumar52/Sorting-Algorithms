@@ -1,4 +1,4 @@
-package sortingalgorithm.FixedDataRange;
+package FixedDataRange;
 
 import java.util.Arrays;
 

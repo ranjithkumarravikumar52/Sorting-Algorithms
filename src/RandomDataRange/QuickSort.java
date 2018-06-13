@@ -1,4 +1,4 @@
-package sortingalgorithm.RandomDataRange;
+package RandomDataRange;
 
 public class QuickSort extends RandomDataRangeSortAlgorithm {
 
