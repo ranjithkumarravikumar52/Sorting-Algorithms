@@ -1,8 +1,10 @@
 package Client;
 
-import FixedDataRange.*;
+import FixedDataRange.CountingSort;
+import FixedDataRange.RadixSort;
 import RandomDataRange.*;
-import Util.*;
+import Util.SortAlgorithm;
+
 import java.util.Arrays;
 
 //TODO once all the sort algorithms is cleaned, provide a way to implement in JAVA EE
