@@ -1,7 +1,7 @@
 package client;
 
-import FixedDataRange.CountingSort;
-import FixedDataRange.RadixSort;
+import fixeddatarange.CountingSort;
+import fixeddatarange.RadixSort;
 import RandomDataRange.*;
 import Util.SortAlgorithm;
 

@@ -42,6 +42,7 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
     /**
      * traverse from the start of the array
      * look for position where element > pivot
+     *
      * @param localArray
      * @param pivot
      * @param i
@@ -49,7 +50,7 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
      * @return
      */
     private int traverseFromStart(int[] localArray, int pivot, int i, int j) {
-        while (i < j && localArray[++i] <= pivot);
+        while (i < j && localArray[++i] <= pivot) ;
         if (i < j) {
             localArray[j] = localArray[i];
         }
@@ -59,6 +60,7 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
     /**
      * traverse from the end of the array
      * look for position element < pivot
+     *
      * @param localArray
      * @param pivot
      * @param i
@@ -66,7 +68,7 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
      * @return
      */
     private int traverseFromEnd(int[] localArray, int pivot, int i, int j) {
-        while (i < j && localArray[--j] >= pivot);
+        while (i < j && localArray[--j] >= pivot) ;
         if (i < j) {
             localArray[i] = localArray[j];
         }
