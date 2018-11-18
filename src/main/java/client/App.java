@@ -1,4 +1,4 @@
-package Client;
+package client;
 
 import FixedDataRange.CountingSort;
 import FixedDataRange.RadixSort;
@@ -14,15 +14,15 @@ public class App {
     public static void main(String[] args) {
 
         SortAlgorithm[] randomSortList = {new BubbleSort(), new InsertionSort(), new MergeSort(), new QuickSort(), new SelectionSort(), new ShellSort()};
-        for (int i = 0; i < randomSortList.length; i++) {
-            randomSortClientModule(randomSortList[i]);
+        for (SortAlgorithm aRandomSortList : randomSortList) {
+            randomSortClientModule(aRandomSortList);
         }
 
         System.out.println();
 
         SortAlgorithm[] fixedSortList = {new CountingSort(), new RadixSort()};
-        for (int i = 0; i < fixedSortList.length; i++) {
-            fixedSortClientModule(fixedSortList[i]);
+        for (SortAlgorithm aFixedSortList : fixedSortList) {
+            fixedSortClientModule(aFixedSortList);
         }
     }
 
