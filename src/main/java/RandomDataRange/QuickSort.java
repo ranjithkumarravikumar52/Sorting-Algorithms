@@ -1,5 +1,7 @@
 package RandomDataRange;
 
+import Util.TimeCalculator;
+
 public class QuickSort extends RandomDataRangeSortAlgorithm {
 
     public QuickSort() {
@@ -10,7 +12,7 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
         int[] localArray = new int[inputArray.length];
         System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
 //        int[] localArray = {20, 35, -15, 7, 55, 1, -22};
-        System.out.println("===QUICK SORT===");
+//        System.out.println("===QUICK SORT===");
         doQuickSort(localArray, 0, localArray.length);
         setOutputArray(localArray);
         return localArray;
@@ -77,6 +79,12 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
-        return quickSort(inputArray);
+        TimeCalculator timeCalculator = new TimeCalculator();
+        timeCalculator.startTime();
+        int[] resultArray = quickSort(inputArray);
+        timeCalculator.endTime();
+        this.setTotalTime(timeCalculator.getTotalTime());
+        this.setSortAlgorithmName(this.getClass().getSimpleName());
+        return resultArray;
     }
 }

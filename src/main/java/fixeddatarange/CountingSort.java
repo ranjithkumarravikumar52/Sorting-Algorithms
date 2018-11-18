@@ -1,5 +1,7 @@
 package fixeddatarange;
 
+import Util.TimeCalculator;
+
 import java.util.Arrays;
 
 public class CountingSort extends FixedDataRangeSortAlgorithm {
@@ -14,8 +16,8 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
         System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
 
         int[] countingArray = new int[10];
-        System.out.println("===COUNTING SORT===");
-        setStepsToSort(0);
+//        System.out.println("===COUNTING SORT===");
+
 
         //Setting up counting array
         for (int aLocalArray : localArray) {
@@ -41,7 +43,13 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
-        System.out.println("Input array for the counting sort:\n"+ Arrays.toString(this.getInputArray()));
-        return countingSort(inputArray);
+//        System.out.println("Input array for the counting sort:\n" + Arrays.toString(this.getInputArray()));
+        TimeCalculator timeCalculator = new TimeCalculator();
+        timeCalculator.startTime();
+        int[] resultArray = countingSort(inputArray);
+        timeCalculator.endTime();
+        this.setTotalTime(timeCalculator.getTotalTime());
+        this.setSortAlgorithmName(this.getClass().getSimpleName());
+        return resultArray;
     }
 }

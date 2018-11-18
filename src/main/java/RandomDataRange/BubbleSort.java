@@ -20,7 +20,7 @@ public class BubbleSort extends RandomDataRangeSortAlgorithm {
         int[] localArray = new int[inputArray.length];
         System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
 
-        System.out.println("===BUBBLE SORT===");
+//        System.out.println("===BUBBLE SORT===");
         for (int lastUnsortedIndex = localArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
                 stepsToSort++;
@@ -30,14 +30,18 @@ public class BubbleSort extends RandomDataRangeSortAlgorithm {
             }
         }
 
-        setStepsToSort(stepsToSort);
         setOutputArray(localArray);
         return localArray;
     }
 
     @Override
     public int[] sort(int[] inputArray) {
+        TimeCalculator timeCalculator = new TimeCalculator();
+        timeCalculator.startTime();
         int[] outputArray = bubbleSort(inputArray);
+        timeCalculator.endTime();
+        this.setTotalTime(timeCalculator.getTotalTime());
+        this.setSortAlgorithmName(this.getClass().getSimpleName());
         return outputArray;
     }
 }

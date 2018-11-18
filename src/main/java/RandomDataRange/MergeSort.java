@@ -1,5 +1,7 @@
 package RandomDataRange;
 
+import Util.TimeCalculator;
+
 public class MergeSort extends RandomDataRangeSortAlgorithm {
 
 
@@ -13,11 +15,9 @@ public class MergeSort extends RandomDataRangeSortAlgorithm {
      * O(n*logn)
      * Stable Algorithm
      */
-    //TODO change the sort to increasing order
     public int[] mergeSort(int[] inputArray) {
         int[] localArray = new int[inputArray.length];
         System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
-        System.out.println("===MERGE SORT===");
         int start = 0;
         int end = localArray.length;
 
@@ -31,9 +31,6 @@ public class MergeSort extends RandomDataRangeSortAlgorithm {
     /**
      * end index is always one greater than the last element's index
      *
-     * @param array
-     * @param start
-     * @param end
      */
     private void splitForMergeSort(int[] array, int start, int end) {
         int mid = (start + end) / 2;
@@ -55,10 +52,7 @@ public class MergeSort extends RandomDataRangeSortAlgorithm {
         int tempIndex = 0;
         int[] tempArray = new int[end - start];
         while (i < mid && j < end) {
-            tempArray[tempIndex++] = array[i] >= array[j] ? array[i++] : array[j++];
-            int stepsToSort = getStepsToSort();
-            stepsToSort++;
-            setStepsToSort(stepsToSort);
+            tempArray[tempIndex++] = array[i] <= array[j] ? array[i++] : array[j++];
         }
 
         while (j < end) {
@@ -75,6 +69,12 @@ public class MergeSort extends RandomDataRangeSortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
-        return mergeSort(inputArray);
+        TimeCalculator timeCalculator = new TimeCalculator();
+        timeCalculator.startTime();
+        int[] resultArray = mergeSort(inputArray);
+        timeCalculator.endTime();
+        this.setTotalTime(timeCalculator.getTotalTime());
+        this.setSortAlgorithmName(this.getClass().getSimpleName());
+        return resultArray;
     }
 }

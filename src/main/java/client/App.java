@@ -1,44 +1,65 @@
 package client;
 
-import fixeddatarange.CountingSort;
-import fixeddatarange.RadixSort;
 import RandomDataRange.*;
+import Util.ArrayGenerator;
 import Util.SortAlgorithm;
+import Util.WriteDataToExcel;
 
-import java.util.Arrays;
+import java.io.IOException;
 
 //TODO once all the sort algorithms is cleaned, provide a way to implement in JAVA EE
-//TODO change parameter stepsToSort to TimeTaken
 public class App {
+
+    private static int SIZE = 11;
+    private static int SIMULATION_COUNT = 10;
 
     public static void main(String[] args) {
 
-        SortAlgorithm[] randomSortList = {new BubbleSort(), new InsertionSort(), new MergeSort(), new QuickSort(), new SelectionSort(), new ShellSort()};
-        for (SortAlgorithm aRandomSortList : randomSortList) {
-            randomSortClientModule(aRandomSortList);
+        while(SIZE > 10){
+            ArrayGenerator.SIZE = SIZE;
+            System.out.println("SIZE: "+SIZE+" ...");
+            doSimulation();
+            SIZE = SIZE - 10;
         }
 
+    }
+
+    private static void doSimulation() {
+        for (int i = 1; i <= SIMULATION_COUNT; i++) {
+            System.out.println("SIMULATION COUNT: "+i+" ...");
+            SortAlgorithm[] randomSortList = {
+                    new BubbleSort(),
+                    new SelectionSort(),
+                    new InsertionSort(),
+                    new MergeSort(),
+                    new QuickSort(),
+                    new ShellSort(),
+//                new CountingSort(),
+//                new RadixSort()
+            };
+            for (SortAlgorithm aRandomSortList : randomSortList) {
+                sortClientModule(aRandomSortList);
+            }
+
+            try {
+                WriteDataToExcel.writeData(randomSortList);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        try {
+            WriteDataToExcel.closeStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void sortClientModule(SortAlgorithm sortAlgorithm) {
+        int[] inputArray = sortAlgorithm.getInputArray();
+        sortAlgorithm.sort(inputArray);
+        System.out.println(sortAlgorithm.getSortAlgorithmName() + ": " + sortAlgorithm.getTotalTime() + "ms");
         System.out.println();
-
-        SortAlgorithm[] fixedSortList = {new CountingSort(), new RadixSort()};
-        for (SortAlgorithm aFixedSortList : fixedSortList) {
-            fixedSortClientModule(aFixedSortList);
-        }
     }
 
-    private static void randomSortClientModule(SortAlgorithm sortAlgorithm) {
-        int[] inputArray = sortAlgorithm.getInputArray();
-        sortAlgorithm.sort(inputArray);
-
-        int[] outputArray = sortAlgorithm.getOutputArray();
-        System.out.println(Arrays.toString(outputArray));
-    }
-
-    private static void fixedSortClientModule(SortAlgorithm sortAlgorithm) {
-        int[] inputArray = sortAlgorithm.getInputArray();
-        sortAlgorithm.sort(inputArray);
-
-        int[] outputArray = sortAlgorithm.getOutputArray();
-        System.out.println(Arrays.toString(outputArray));
-    }
 }

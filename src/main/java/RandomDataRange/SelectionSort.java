@@ -6,6 +6,7 @@
 package RandomDataRange;
 
 import Util.SwapElements;
+import Util.TimeCalculator;
 
 /**
  *
@@ -20,7 +21,7 @@ public class SelectionSort extends RandomDataRangeSortAlgorithm  {
     private int[] selectionSort(int[] inputArray) {
         int[] localArray = new int[inputArray.length];
         System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
-        System.out.println("===SELECTION SORT===");
+//        System.out.println("===SELECTION SORT===");
         
         int stepsToSort = 0;
         for (int lastUnsortedIndex = localArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
@@ -33,14 +34,19 @@ public class SelectionSort extends RandomDataRangeSortAlgorithm  {
             }
             stepsToSort = SwapElements.swap(localArray, lastUnsortedIndex, maxIndex, stepsToSort);
         }
-        setStepsToSort(stepsToSort);
+//        setStepsToSort(stepsToSort);
         setOutputArray(localArray);
         return localArray;
     }
 
     @Override
     public int[] sort(int[] inputArray) {
+        TimeCalculator timeCalculator = new TimeCalculator();
+        timeCalculator.startTime();
         int[] outputArray = selectionSort(inputArray);
+        timeCalculator.endTime();
+        this.setTotalTime(timeCalculator.getTotalTime());
+        this.setSortAlgorithmName(this.getClass().getSimpleName());
         return outputArray;
     }
 }
