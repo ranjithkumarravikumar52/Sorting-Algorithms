@@ -14,16 +14,17 @@ package Util;
  */
 abstract public class SortAlgorithm {
 
-    private int stepsToSort;
+    private String sortAlgorithmName;
+    private long totalTime;
     private int[] inputArray;
     private int[] outputArray;
 
-    public int getStepsToSort() {
-        return stepsToSort;
+    public long getTotalTime() {
+        return totalTime;
     }
 
-    public void setStepsToSort(int stepsToSort) {
-        this.stepsToSort = stepsToSort;
+    protected void setTotalTime(long totalTime) {
+        this.totalTime = totalTime;
     }
 
     public int[] getInputArray() {
@@ -38,10 +39,17 @@ abstract public class SortAlgorithm {
         return outputArray;
     }
 
-    public void setOutputArray(int[] outputArray) {
+    protected void setOutputArray(int[] outputArray) {
         this.outputArray = outputArray;
     }
 
     public abstract int[] sort(int[] inputArray);
 
+    public String getSortAlgorithmName() {
+        return sortAlgorithmName;
+    }
+
+    public void setSortAlgorithmName(String sortAlgorithmName) {
+        this.sortAlgorithmName = sortAlgorithmName;
+    }
 }

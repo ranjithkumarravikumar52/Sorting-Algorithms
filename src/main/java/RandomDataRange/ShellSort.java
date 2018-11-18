@@ -5,6 +5,8 @@
  */
 package RandomDataRange;
 
+import Util.TimeCalculator;
+
 /**
  * @author Ranjith
  */
@@ -17,7 +19,7 @@ public class ShellSort extends RandomDataRangeSortAlgorithm {
     private int[] shellSort(int[] inputArray) {
         int[] localArray = new int[inputArray.length];
         System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
-        System.out.println("===SHELL SORT===");
+//        System.out.println("===SHELL SORT===");
         int stepsToSort = 0;
         for (int gap = localArray.length / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < localArray.length; i++) {
@@ -32,13 +34,19 @@ public class ShellSort extends RandomDataRangeSortAlgorithm {
                 localArray[j] = newElement;
             }
         }
-        setStepsToSort(stepsToSort);
+//        setStepsToSort(stepsToSort);
         setOutputArray(localArray);
         return localArray;
     }
 
     @Override
     public int[] sort(int[] inputArray) {
-        return shellSort(inputArray);
+        TimeCalculator timeCalculator = new TimeCalculator();
+        timeCalculator.startTime();
+        int[] resultArray = shellSort(inputArray);
+        timeCalculator.endTime();
+        this.setTotalTime(timeCalculator.getTotalTime());
+        this.setSortAlgorithmName(this.getClass().getSimpleName());
+        return resultArray;
     }
 }
