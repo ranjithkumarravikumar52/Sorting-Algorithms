@@ -1,4 +1,4 @@
-package FixedDataRange;
+package fixeddatarange;
 
 import java.util.Arrays;
 
@@ -18,8 +18,8 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
         setStepsToSort(0);
 
         //Setting up counting array
-        for (int i = 0; i < localArray.length; i++) {
-            countingArray[localArray[i] - 1]++; //how to calculate for different mins and max values? 
+        for (int aLocalArray : localArray) {
+            countingArray[aLocalArray - 1]++; //how to calculate for different mins and max values?
         }
 
         //how this could work for different min and max values instead of min=1

@@ -1,4 +1,4 @@
-package FixedDataRange;
+package fixeddatarange;
 
 
 import Util.ArrayGenerator;
@@ -17,7 +17,7 @@ public abstract class FixedDataRangeSortAlgorithm extends SortAlgorithm {
 
     private static int[] unSortedArray = ArrayGenerator.getFixedDataRangeArray(1, 10);
 
-    public static int[] getUnSortedArray() {
+    static int[] getUnSortedArray() {
         return unSortedArray;
     }
 
