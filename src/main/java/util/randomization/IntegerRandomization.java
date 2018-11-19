@@ -13,10 +13,10 @@ public class IntegerRandomization implements Randomization<Integer> {
     }
 
     /**
-     * @return gives a random value of default possible values in [minRange, maxRange]
+     * @return gives a random value of default possible values in minRange(inclusive), maxRange(exclusive)
      */
     @Override
     public Integer getRandomElement(Integer minRange, Integer maxRange) {
-       return new Random().nextInt(maxRange - minRange) + minRange;
+        return (new Random().nextInt(maxRange - minRange) + minRange);
     }
 }

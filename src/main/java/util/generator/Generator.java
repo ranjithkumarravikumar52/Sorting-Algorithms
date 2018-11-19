@@ -12,6 +12,6 @@ public abstract class Generator<T> {
 
     protected abstract T[] generateArray();
 
-    protected abstract T[] generateArray(int size, T minRange, T maxRange);
+    protected abstract T[] generateArray(int size, T minRange, T maxRange) throws Exception;
 
 }
