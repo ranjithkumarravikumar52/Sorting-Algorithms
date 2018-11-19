@@ -1,7 +1,6 @@
 package randomdatarange;
 
 
-import util.ArrayGenerator;
 import util.SortAlgorithm;
 
 /**
@@ -22,7 +21,7 @@ import util.SortAlgorithm;
 abstract class RandomDataRangeSortAlgorithm extends SortAlgorithm {
 
     //This class can be a medium to be common array that could be used by all the SortAlgorithms
-//    private static int[] unSortedArray = ArrayGenerator.getRandomDataRangeArray();
+//    private static int[] unSortedArray = IntegerArrayGenerator.getRandomDataRangeArray();
 
 //    static int[] getUnSortedArray() {
 //        return unSortedArray;

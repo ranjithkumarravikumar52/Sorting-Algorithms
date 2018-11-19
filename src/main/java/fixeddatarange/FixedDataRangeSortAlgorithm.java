@@ -1,7 +1,6 @@
 package fixeddatarange;
 
 
-import util.ArrayGenerator;
 import util.SortAlgorithm;
 
 /**
@@ -15,7 +14,7 @@ import util.SortAlgorithm;
  */
 public abstract class FixedDataRangeSortAlgorithm extends SortAlgorithm {
 
-//    private static int[] unSortedArray = ArrayGenerator.generateFixedDataRangeArray(1, 10);
+//    private static int[] unSortedArray = IntegerArrayGenerator.generateFixedDataRangeArray(1, 10);
 //
 //    static int[] getUnSortedArray() {
 //        return unSortedArray;

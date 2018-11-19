@@ -36,7 +36,7 @@ public class WriteDataToExcel {
         for (SortAlgorithm algorithm : sortAlgorithm) {
             sortingResults.put(Integer.toString(i++), new Object[]{
                     algorithm.getSortAlgorithmName(),
-//                    Integer.toString(ArrayGenerator.SIZE),
+//                    Integer.toString(IntegerArrayGenerator.SIZE),
                     Long.toString(algorithm.getTotalTime()),
                     Arrays.toString(algorithm.getInputArray()),
                     Arrays.toString(algorithm.getOutputArray())
