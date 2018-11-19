@@ -1,13 +1,8 @@
-package RandomDataRange;
+package randomdatarange;
 
-import Util.TimeCalculator;
+import util.TimeCalculator;
 
 public class MergeSort extends RandomDataRangeSortAlgorithm {
-
-
-    public MergeSort() {
-        this.setInputArray(RandomDataRangeSortAlgorithm.getUnSortedArray());
-    }
 
     /**
      * No new arrays is created during splitting phase - logical splitting
@@ -15,16 +10,11 @@ public class MergeSort extends RandomDataRangeSortAlgorithm {
      * O(n*logn)
      * Stable Algorithm
      */
-    public int[] mergeSort(int[] inputArray) {
-        int[] localArray = new int[inputArray.length];
-        System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
+    private int[] mergeSort(int[] inputArray) {
         int start = 0;
-        int end = localArray.length;
-
-        splitForMergeSort(localArray, start, end);
-        this.setOutputArray(localArray);
-        return localArray;
-
+        int end = inputArray.length;
+        splitForMergeSort(inputArray, start, end);
+        return inputArray;
     }
 
 
@@ -69,12 +59,18 @@ public class MergeSort extends RandomDataRangeSortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
+        this.setInputArray(inputArray);
+        this.setSortAlgorithmName(this.getClass().getSimpleName());
+
         TimeCalculator timeCalculator = new TimeCalculator();
         timeCalculator.startTime();
+
         int[] resultArray = mergeSort(inputArray);
+
         timeCalculator.endTime();
+
         this.setTotalTime(timeCalculator.getTotalTime());
-        this.setSortAlgorithmName(this.getClass().getSimpleName());
+
         return resultArray;
     }
 }

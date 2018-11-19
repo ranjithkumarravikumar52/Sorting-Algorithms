@@ -1,12 +1,8 @@
-package RandomDataRange;
+package randomdatarange;
 
-import Util.TimeCalculator;
+import util.TimeCalculator;
 
 public class InsertionSort extends RandomDataRangeSortAlgorithm {
-
-    public InsertionSort() {
-        this.setInputArray(RandomDataRangeSortAlgorithm.getUnSortedArray());
-    }
 
     private int[] insertionSort(int[] inputArray) {
 
@@ -29,6 +25,7 @@ public class InsertionSort extends RandomDataRangeSortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
+        this.setInputArray(inputArray);
         TimeCalculator timeCalculator = new TimeCalculator();
         timeCalculator.startTime();
         int[] resultArray = insertionSort(inputArray);

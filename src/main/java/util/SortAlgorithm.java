@@ -1,4 +1,4 @@
-package Util;
+package util;
 
 /**
  * <p>Every Sort Algorithm is imagined as a Class. This class has two fields mandatory for any SortAlgorithm.</p>
@@ -39,7 +39,7 @@ abstract public class SortAlgorithm {
         return outputArray;
     }
 
-    protected void setOutputArray(int[] outputArray) {
+    public void setOutputArray(int[] outputArray) {
         this.outputArray = outputArray;
     }
 

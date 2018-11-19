@@ -1,4 +1,4 @@
-package Util;
+package util;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -36,7 +36,7 @@ public class WriteDataToExcel {
         for (SortAlgorithm algorithm : sortAlgorithm) {
             sortingResults.put(Integer.toString(i++), new Object[]{
                     algorithm.getSortAlgorithmName(),
-                    Integer.toString(ArrayGenerator.SIZE),
+//                    Integer.toString(ArrayGenerator.SIZE),
                     Long.toString(algorithm.getTotalTime()),
                     Arrays.toString(algorithm.getInputArray()),
                     Arrays.toString(algorithm.getOutputArray())

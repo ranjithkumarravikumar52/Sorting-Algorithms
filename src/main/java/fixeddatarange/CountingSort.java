@@ -1,14 +1,9 @@
 package fixeddatarange;
 
-import Util.TimeCalculator;
-
-import java.util.Arrays;
+import util.TimeCalculator;
 
 public class CountingSort extends FixedDataRangeSortAlgorithm {
 
-    public CountingSort() {
-        this.setInputArray(FixedDataRangeSortAlgorithm.getUnSortedArray());
-    }
 
     private int[] countingSort(int[] inputArray) {
         //accessing array variable from FixedDataRangeSortAlgorithm
