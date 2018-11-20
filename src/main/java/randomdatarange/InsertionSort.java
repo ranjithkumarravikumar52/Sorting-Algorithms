@@ -1,6 +1,6 @@
 package randomdatarange;
 
-import util.TimeCalculator;
+import util.metric.TimeMetric;
 
 public class InsertionSort extends RandomDataRangeSortAlgorithm {
 
@@ -26,11 +26,11 @@ public class InsertionSort extends RandomDataRangeSortAlgorithm {
     @Override
     public int[] sort(int[] inputArray) {
         this.setInputArray(inputArray);
-        TimeCalculator timeCalculator = new TimeCalculator();
-        timeCalculator.startTime();
+        TimeMetric timeMetric = new TimeMetric();
+        timeMetric.startTime();
         int[] resultArray = insertionSort(inputArray);
-        timeCalculator.endTime();
-        this.setTotalTime(timeCalculator.getTotalTime());
+        timeMetric.endTime();
+        this.setTotalTime(timeMetric.getTotalMetric());
         this.setSortAlgorithmName(this.getClass().getSimpleName());
         return resultArray;
     }

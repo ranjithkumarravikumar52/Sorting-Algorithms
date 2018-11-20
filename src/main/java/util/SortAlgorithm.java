@@ -52,4 +52,6 @@ abstract public class SortAlgorithm {
     public void setSortAlgorithmName(String sortAlgorithmName) {
         this.sortAlgorithmName = sortAlgorithmName;
     }
+
+
 }

@@ -1,6 +1,6 @@
 package fixeddatarange;
 
-import util.TimeCalculator;
+import util.metric.TimeMetric;
 
 public class CountingSort extends FixedDataRangeSortAlgorithm {
 
@@ -39,11 +39,11 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
     @Override
     public int[] sort(int[] inputArray) {
 //        System.out.println("Input array for the counting sort:\n" + Arrays.toString(this.getInputArray()));
-        TimeCalculator timeCalculator = new TimeCalculator();
-        timeCalculator.startTime();
+        TimeMetric timeMetric = new TimeMetric();
+        timeMetric.startTime();
         int[] resultArray = countingSort(inputArray);
-        timeCalculator.endTime();
-        this.setTotalTime(timeCalculator.getTotalTime());
+        timeMetric.endTime();
+        this.setTotalTime(timeMetric.getTotalMetric());
         this.setSortAlgorithmName(this.getClass().getSimpleName());
         return resultArray;
     }
