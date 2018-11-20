@@ -5,7 +5,7 @@
  */
 package randomdatarange;
 
-import util.TimeCalculator;
+import util.metric.TimeMetric;
 
 public class ShellSort extends RandomDataRangeSortAlgorithm {
 
@@ -32,14 +32,14 @@ public class ShellSort extends RandomDataRangeSortAlgorithm {
         this.setInputArray(inputArray);
         this.setSortAlgorithmName(this.getClass().getSimpleName());
 
-        TimeCalculator timeCalculator = new TimeCalculator();
-        timeCalculator.startTime();
+        TimeMetric timeMetric = new TimeMetric();
+        timeMetric.startTime();
 
         int[] resultArray = shellSort(inputArray);
 
-        timeCalculator.endTime();
+        timeMetric.endTime();
 
-        this.setTotalTime(timeCalculator.getTotalTime());
+        this.setTotalTime(timeMetric.getTotalMetric());
 
         return resultArray;
     }

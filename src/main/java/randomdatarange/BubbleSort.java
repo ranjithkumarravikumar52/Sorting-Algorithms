@@ -1,7 +1,7 @@
 package randomdatarange;
 
 import util.SwapElements;
-import util.TimeCalculator;
+import util.metric.TimeMetric;
 
 /**
  * Inherits fields from the superclass SortAlgorithm
@@ -30,13 +30,13 @@ public class BubbleSort extends RandomDataRangeSortAlgorithm {
     public int[] sort(int[] inputArray) {
         this.setInputArray(inputArray);
 
-        TimeCalculator timeCalculator = new TimeCalculator();
-        timeCalculator.startTime();
+        TimeMetric timeMetric = new TimeMetric();
+        timeMetric.startTime();
 
         int[] resultArray = bubbleSort(inputArray);
 
-        timeCalculator.endTime();
-        this.setTotalTime(timeCalculator.getTotalTime());
+        timeMetric.endTime();
+        this.setTotalTime(timeMetric.getTotalMetric());
 
         this.setSortAlgorithmName(this.getClass().getSimpleName());
 
