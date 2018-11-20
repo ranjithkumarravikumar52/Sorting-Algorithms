@@ -1,6 +1,6 @@
 package randomdatarange;
 
-import util.TimeCalculator;
+import util.metric.TimeMetric;
 
 public class QuickSort extends RandomDataRangeSortAlgorithm {
 
@@ -61,13 +61,13 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
         this.setSortAlgorithmName(this.getClass().getSimpleName());
         this.setInputArray(inputArray);
 
-        TimeCalculator timeCalculator = new TimeCalculator();
-        timeCalculator.startTime();
+        TimeMetric timeMetric = new TimeMetric();
+        timeMetric.startTime();
 
         int[] resultArray = quickSort(inputArray);
 
-        timeCalculator.endTime();
-        this.setTotalTime(timeCalculator.getTotalTime());
+        timeMetric.endTime();
+        this.setTotalTime(timeMetric.getTotalMetric());
 
         return resultArray;
     }

@@ -1,6 +1,6 @@
 package fixeddatarange;
 
-import util.TimeCalculator;
+import util.metric.TimeMetric;
 
 import java.util.Random;
 
@@ -105,10 +105,10 @@ public class RadixSort extends FixedDataRangeSortAlgorithm {
     @Override
     public int[] sort(int[] inputArray) {
 //        System.out.println("Input array for the radix sort:\n"+ Arrays.toString(inputArray));
-        TimeCalculator timeCalculator = new TimeCalculator();
-        timeCalculator.startTime();
+        TimeMetric timeMetric = new TimeMetric();
+        timeMetric.startTime();
         int[] ints = radixSortIntegers(inputArray);
-        timeCalculator.endTime();
+        timeMetric.endTime();
         this.setTotalTime(getTotalTime());
         this.setOutputArray(ints);
         this.setSortAlgorithmName(this.getClass().getSimpleName());
