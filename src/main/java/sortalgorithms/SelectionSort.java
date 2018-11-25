@@ -6,7 +6,6 @@
 package sortalgorithms;
 
 import util.swapelements.IntSwappable;
-import util.metric.TimeMetric;
 
 public class SelectionSort extends SortAlgorithm implements IntSwappable {
 
@@ -28,14 +27,7 @@ public class SelectionSort extends SortAlgorithm implements IntSwappable {
 
     @Override
     public int[] sort(int[] inputArray) {
-        this.setInputArray(inputArray);
-        TimeMetric timeMetric = new TimeMetric();
-        timeMetric.startTime();
-        int[] outputArray = selectionSort(inputArray);
-        timeMetric.endTime();
-        this.setTotalTime(timeMetric.getTotalMetric());
-        this.setSortAlgorithmName(this.getClass().getSimpleName());
-        return outputArray;
+        return selectionSort(inputArray);
     }
 
     @Override

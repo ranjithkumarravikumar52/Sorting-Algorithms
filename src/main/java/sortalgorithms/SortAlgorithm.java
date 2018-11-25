@@ -13,45 +13,5 @@ package sortalgorithms;
  * </ul>
  */
 abstract public class SortAlgorithm {
-
-    private String sortAlgorithmName;
-    private long totalTime;
-    private int[] inputArray;
-    private int[] outputArray;
-
-    public long getTotalTime() {
-        return totalTime;
-    }
-
-    protected void setTotalTime(long totalTime) {
-        this.totalTime = totalTime;
-    }
-
-    public int[] getInputArray() {
-        return inputArray;
-    }
-
-    public void setInputArray(int[] inputArray) {
-        this.inputArray = inputArray;
-    }
-
-    public int[] getOutputArray() {
-        return outputArray;
-    }
-
-    public void setOutputArray(int[] outputArray) {
-        this.outputArray = outputArray;
-    }
-
     public abstract int[] sort(int[] inputArray);
-
-    public String getSortAlgorithmName() {
-        return sortAlgorithmName;
-    }
-
-    public void setSortAlgorithmName(String sortAlgorithmName) {
-        this.sortAlgorithmName = sortAlgorithmName;
-    }
-
-
 }

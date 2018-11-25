@@ -1,6 +1,5 @@
 package sortalgorithms;
 
-import util.metric.TimeMetric;
 import util.swapelements.IntSwappable;
 
 /**
@@ -13,34 +12,20 @@ import util.swapelements.IntSwappable;
 public class BubbleSort extends SortAlgorithm implements IntSwappable {
 
     private int[] bubbleSort(int[] inputArray) {
-        int[] localArray = new int[inputArray.length];
-        System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
-        for (int lastUnsortedIndex = localArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
+
+        for (int lastUnsortedIndex = inputArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
-                if (localArray[i] > localArray[i + 1]) {
-                    swap(localArray, i, i + 1);
+                if (inputArray[i] > inputArray[i + 1]) {
+                    swap(inputArray, i, i + 1);
                 }
             }
         }
-
-        return localArray;
+        return inputArray;
     }
 
     @Override
     public int[] sort(int[] inputArray) {
-        this.setInputArray(inputArray);
-
-        TimeMetric timeMetric = new TimeMetric();
-        timeMetric.startTime();
-
-        int[] resultArray = bubbleSort(inputArray);
-
-        timeMetric.endTime();
-        this.setTotalTime(timeMetric.getTotalMetric());
-
-        this.setSortAlgorithmName(this.getClass().getSimpleName());
-
-        return resultArray;
+        return bubbleSort(inputArray);
     }
 
     @Override
