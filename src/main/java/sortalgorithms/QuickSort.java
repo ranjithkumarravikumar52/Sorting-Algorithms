@@ -1,7 +1,5 @@
 package sortalgorithms;
 
-import util.metric.TimeMetric;
-
 public class QuickSort extends SortAlgorithm {
 
     private int[] quickSort(int[] inputArray) {
@@ -58,17 +56,6 @@ public class QuickSort extends SortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
-        this.setSortAlgorithmName(this.getClass().getSimpleName());
-        this.setInputArray(inputArray);
-
-        TimeMetric timeMetric = new TimeMetric();
-        timeMetric.startTime();
-
-        int[] resultArray = quickSort(inputArray);
-
-        timeMetric.endTime();
-        this.setTotalTime(timeMetric.getTotalMetric());
-
-        return resultArray;
+        return quickSort(inputArray);
     }
 }

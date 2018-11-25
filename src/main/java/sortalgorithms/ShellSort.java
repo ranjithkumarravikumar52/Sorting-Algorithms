@@ -5,8 +5,6 @@
  */
 package sortalgorithms;
 
-import util.metric.TimeMetric;
-
 public class ShellSort extends SortAlgorithm {
 
 
@@ -29,18 +27,6 @@ public class ShellSort extends SortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
-        this.setInputArray(inputArray);
-        this.setSortAlgorithmName(this.getClass().getSimpleName());
-
-        TimeMetric timeMetric = new TimeMetric();
-        timeMetric.startTime();
-
-        int[] resultArray = shellSort(inputArray);
-
-        timeMetric.endTime();
-
-        this.setTotalTime(timeMetric.getTotalMetric());
-
-        return resultArray;
+        return shellSort(inputArray);
     }
 }

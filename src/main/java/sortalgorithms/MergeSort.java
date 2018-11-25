@@ -1,7 +1,5 @@
 package sortalgorithms;
 
-import util.metric.TimeMetric;
-
 public class MergeSort extends SortAlgorithm {
 
     /**
@@ -20,7 +18,6 @@ public class MergeSort extends SortAlgorithm {
 
     /**
      * end index is always one greater than the last element's index
-     *
      */
     private void splitForMergeSort(int[] array, int start, int end) {
         int mid = (start + end) / 2;
@@ -51,26 +48,12 @@ public class MergeSort extends SortAlgorithm {
         while (i < mid) {
             tempArray[tempIndex++] = array[i++];
         }
-
-
         System.arraycopy(tempArray, 0, array, 0 + start, end - start);
 
     }
 
     @Override
     public int[] sort(int[] inputArray) {
-        this.setInputArray(inputArray);
-        this.setSortAlgorithmName(this.getClass().getSimpleName());
-
-        TimeMetric timeMetric = new TimeMetric();
-        timeMetric.startTime();
-
-        int[] resultArray = mergeSort(inputArray);
-
-        timeMetric.endTime();
-
-        this.setTotalTime(timeMetric.getTotalMetric());
-
-        return resultArray;
+        return mergeSort(inputArray);
     }
 }

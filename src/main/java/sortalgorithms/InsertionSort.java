@@ -1,7 +1,5 @@
 package sortalgorithms;
 
-import util.metric.TimeMetric;
-
 public class InsertionSort extends SortAlgorithm {
 
     private int[] insertionSort(int[] inputArray) {
@@ -18,20 +16,12 @@ public class InsertionSort extends SortAlgorithm {
             }
             localArray[i] = newElement;
         }
-        setOutputArray(localArray);
         return localArray;
 
     }
 
     @Override
     public int[] sort(int[] inputArray) {
-        this.setInputArray(inputArray);
-        TimeMetric timeMetric = new TimeMetric();
-        timeMetric.startTime();
-        int[] resultArray = insertionSort(inputArray);
-        timeMetric.endTime();
-        this.setTotalTime(timeMetric.getTotalMetric());
-        this.setSortAlgorithmName(this.getClass().getSimpleName());
-        return resultArray;
+        return insertionSort(inputArray);
     }
 }
