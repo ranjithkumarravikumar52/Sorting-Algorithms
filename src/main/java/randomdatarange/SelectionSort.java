@@ -5,10 +5,11 @@
  */
 package randomdatarange;
 
-import util.SwapElements;
+import util.swapelements.IntSwappable;
+import util.swapelements.ObjectSwappable;
 import util.metric.TimeMetric;
 
-public class SelectionSort extends RandomDataRangeSortAlgorithm  {
+public class SelectionSort extends RandomDataRangeSortAlgorithm  implements IntSwappable {
 
 
     private int[] selectionSort(int[] inputArray) {
@@ -21,7 +22,7 @@ public class SelectionSort extends RandomDataRangeSortAlgorithm  {
                     maxIndex = arrayIndex;
                 }
             }
-            SwapElements.swap(localArray, lastUnsortedIndex, maxIndex);
+            swap(localArray, lastUnsortedIndex, maxIndex);
         }
         return localArray;
     }
@@ -36,5 +37,17 @@ public class SelectionSort extends RandomDataRangeSortAlgorithm  {
         this.setTotalTime(timeMetric.getTotalMetric());
         this.setSortAlgorithmName(this.getClass().getSimpleName());
         return outputArray;
+    }
+
+    @Override
+    public boolean swap(int[] array, int firstIndex, int secondIndex) {
+        if (firstIndex == secondIndex) {
+            return false;
+        }
+
+        Integer temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
+        return true;
     }
 }

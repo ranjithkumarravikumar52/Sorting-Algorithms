@@ -65,7 +65,7 @@ public class ExcelFormat implements FormatType {
 
             //Write the workbook in file system if successful then return true
             out = new FileOutputStream(
-                    new File("C:\\Projects\\Sorting-Algorithms\\src\\main\\resources\\WriteSheet.xlsx"));
+                    new File("src/main/resources/WriteSheet.xlsx"));
             workbook.write(out);
             return true;
 

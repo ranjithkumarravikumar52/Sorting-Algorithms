@@ -1,7 +1,8 @@
 package randomdatarange;
 
-import util.SwapElements;
 import util.metric.TimeMetric;
+import util.swapelements.IntSwappable;
+import util.swapelements.ObjectSwappable;
 
 /**
  * Inherits fields from the superclass SortAlgorithm
@@ -10,7 +11,7 @@ import util.metric.TimeMetric;
  * <li>inputArray - input array to be sorted</li>
  * </ul>
  */
-public class BubbleSort extends RandomDataRangeSortAlgorithm {
+public class BubbleSort extends RandomDataRangeSortAlgorithm implements IntSwappable {
 
     private int[] bubbleSort(int[] inputArray) {
         int[] localArray = new int[inputArray.length];
@@ -18,7 +19,7 @@ public class BubbleSort extends RandomDataRangeSortAlgorithm {
         for (int lastUnsortedIndex = localArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
                 if (localArray[i] > localArray[i + 1]) {
-                    SwapElements.swap(localArray, i, i + 1);
+                    swap(localArray, i, i + 1);
                 }
             }
         }
@@ -41,5 +42,17 @@ public class BubbleSort extends RandomDataRangeSortAlgorithm {
         this.setSortAlgorithmName(this.getClass().getSimpleName());
 
         return resultArray;
+    }
+
+    @Override
+    public boolean swap(int[] array, int firstIndex, int secondIndex) {
+        if (firstIndex == secondIndex) {
+            return false;
+        }
+
+        Integer temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
+        return true;
     }
 }
