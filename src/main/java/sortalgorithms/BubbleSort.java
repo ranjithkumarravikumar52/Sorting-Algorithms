@@ -1,42 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package randomdatarange;
+package sortalgorithms;
 
-import util.swapelements.IntSwappable;
-import util.swapelements.ObjectSwappable;
 import util.metric.TimeMetric;
+import util.swapelements.IntSwappable;
 
-public class SelectionSort extends RandomDataRangeSortAlgorithm  implements IntSwappable {
+/**
+ * Inherits fields from the superclass SortAlgorithm
+ * <ul>
+ * <li>stepsToSort - steps to sort any given array, the measurement of steps is defined in the sorting algorithm implementation.</li>
+ * <li>inputArray - input array to be sorted</li>
+ * </ul>
+ */
+public class BubbleSort extends SortAlgorithm implements IntSwappable {
 
-
-    private int[] selectionSort(int[] inputArray) {
+    private int[] bubbleSort(int[] inputArray) {
         int[] localArray = new int[inputArray.length];
         System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
         for (int lastUnsortedIndex = localArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            int maxIndex = 0;
-            for (int arrayIndex = 1; arrayIndex <= lastUnsortedIndex; arrayIndex++) {
-                if (localArray[arrayIndex] > localArray[maxIndex]) {
-                    maxIndex = arrayIndex;
+            for (int i = 0; i < lastUnsortedIndex; i++) {
+                if (localArray[i] > localArray[i + 1]) {
+                    swap(localArray, i, i + 1);
                 }
             }
-            swap(localArray, lastUnsortedIndex, maxIndex);
         }
+
         return localArray;
     }
 
     @Override
     public int[] sort(int[] inputArray) {
         this.setInputArray(inputArray);
+
         TimeMetric timeMetric = new TimeMetric();
         timeMetric.startTime();
-        int[] outputArray = selectionSort(inputArray);
+
+        int[] resultArray = bubbleSort(inputArray);
+
         timeMetric.endTime();
         this.setTotalTime(timeMetric.getTotalMetric());
+
         this.setSortAlgorithmName(this.getClass().getSimpleName());
-        return outputArray;
+
+        return resultArray;
     }
 
     @Override

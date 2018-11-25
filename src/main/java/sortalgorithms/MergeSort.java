@@ -1,8 +1,8 @@
-package randomdatarange;
+package sortalgorithms;
 
 import util.metric.TimeMetric;
 
-public class MergeSort extends RandomDataRangeSortAlgorithm {
+public class MergeSort extends SortAlgorithm {
 
     /**
      * No new arrays is created during splitting phase - logical splitting

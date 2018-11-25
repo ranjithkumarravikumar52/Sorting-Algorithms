@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package randomdatarange;
+package sortalgorithms;
 
 import util.metric.TimeMetric;
 
-public class ShellSort extends RandomDataRangeSortAlgorithm {
+public class ShellSort extends SortAlgorithm {
 
 
     private int[] shellSort(int[] inputArray) {

@@ -1,8 +1,8 @@
-package randomdatarange;
+package sortalgorithms;
 
 import util.metric.TimeMetric;
 
-public class QuickSort extends RandomDataRangeSortAlgorithm {
+public class QuickSort extends SortAlgorithm {
 
     private int[] quickSort(int[] inputArray) {
         doQuickSort(inputArray, 0, inputArray.length);

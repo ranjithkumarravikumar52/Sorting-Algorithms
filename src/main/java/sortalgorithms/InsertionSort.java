@@ -1,8 +1,8 @@
-package randomdatarange;
+package sortalgorithms;
 
 import util.metric.TimeMetric;
 
-public class InsertionSort extends RandomDataRangeSortAlgorithm {
+public class InsertionSort extends SortAlgorithm {
 
     private int[] insertionSort(int[] inputArray) {
 
