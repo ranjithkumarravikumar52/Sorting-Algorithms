@@ -1,10 +1,10 @@
 # Sorting-Algorithms 
 
 #### Sorting 10,000 elements: Analysis
-![10,000 elements1](/src/main/resources/10000 elements sequential-1.png?raw=true)
+![10,000 elements1](src/main/resources/10000-elements-sequential-1.png?raw=true)
 
 #### Sorting 10,000 elements: Analysis
-![10,000 elements2](/src/main/resources/10000 elements sequential-2.png?raw=true)
+![10,000 elements2](src/main/resources/10000-elements-sequential-2.png?raw=true)
 
 
 #### Issues
