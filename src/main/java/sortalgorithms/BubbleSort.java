@@ -1,6 +1,6 @@
 package sortalgorithms;
 
-import util.swapelements.IntSwappable;
+import util.swapelements.ObjectSwappable;
 
 /**
  * Inherits fields from the superclass SortAlgorithm
@@ -9,9 +9,9 @@ import util.swapelements.IntSwappable;
  * <li>inputArray - input array to be sorted</li>
  * </ul>
  */
-public class BubbleSort extends SortAlgorithm implements IntSwappable {
+public class BubbleSort extends SortAlgorithm<Integer> implements ObjectSwappable<Integer> {
 
-    private int[] bubbleSort(int[] inputArray) {
+    private Integer[] bubbleSort(Integer[] inputArray) {
 
         for (int lastUnsortedIndex = inputArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
@@ -24,12 +24,12 @@ public class BubbleSort extends SortAlgorithm implements IntSwappable {
     }
 
     @Override
-    public int[] sort(int[] inputArray) {
+    public Integer[] sort(Integer[] inputArray) {
         return bubbleSort(inputArray);
     }
 
     @Override
-    public boolean swap(int[] array, int firstIndex, int secondIndex) {
+    public boolean swap(Integer[] array, int firstIndex, int secondIndex) {
         if (firstIndex == secondIndex) {
             return false;
         }

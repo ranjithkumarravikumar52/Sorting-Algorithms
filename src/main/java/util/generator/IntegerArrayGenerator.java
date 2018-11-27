@@ -9,7 +9,7 @@ public class IntegerArrayGenerator extends Generator<Integer> {
      * @return newly generated integer array of default range
      */
     @Override
-    protected Integer[] generateArray() {
+    public Integer[] generateArray() {
         Integer[] integers = new Integer[10];
         for(int i = 0; i < 10; i++){
             integers[i] = new IntegerRandomization().getRandomElement();
@@ -23,7 +23,7 @@ public class IntegerArrayGenerator extends Generator<Integer> {
      */
     //TODO LBYL/EAFP/Exception when minRange > maxRange
     @Override
-    protected Integer[] generateArray(int size, Integer minRange, Integer maxRange) throws Exception {
+    public Integer[] generateArray(int size, Integer minRange, Integer maxRange) throws Exception {
         if(minRange <= maxRange){
             Integer[] integers = new Integer[size];
             for(int i = 0; i < size; i++){

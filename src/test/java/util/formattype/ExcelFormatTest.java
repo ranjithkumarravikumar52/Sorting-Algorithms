@@ -3,7 +3,7 @@ package util.formattype;
 import org.junit.Before;
 import org.junit.Test;
 import util.dao.DataAnalysis;
-import util.dao.IntegerDAO;
+import util.dao.IntegerDataAnalysis;
 import util.metric.MetricMeasure;
 import util.metric.TimeMetric;
 
@@ -23,7 +23,7 @@ public class ExcelFormatTest {
         MetricMeasure metricMeasure = new TimeMetric();
         Integer[] inputArray = new Integer[]{3, 2, 1};
         Integer[] outputArray = new Integer[]{1, 2, 3};
-        dao = new IntegerDAO(sortAlgorithmName, dataSize,  metricMeasure, inputArray, outputArray);
+        dao = new IntegerDataAnalysis(sortAlgorithmName, dataSize,  metricMeasure, inputArray, outputArray);
     }
 
     @Test

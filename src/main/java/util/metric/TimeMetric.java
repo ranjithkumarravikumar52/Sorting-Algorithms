@@ -1,6 +1,6 @@
 package util.metric;
 
-public class TimeMetric implements MetricMeasure<Long>{
+public class TimeMetric extends MetricMeasure<Long>{
 
     private long startTime;
     private long endTime;

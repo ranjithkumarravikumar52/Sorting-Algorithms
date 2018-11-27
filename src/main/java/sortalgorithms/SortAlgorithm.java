@@ -12,6 +12,6 @@ package sortalgorithms;
  * <li>Fixed Data Range</li>
  * </ul>
  */
-abstract public class SortAlgorithm {
-    public abstract int[] sort(int[] inputArray);
+abstract public class SortAlgorithm<T> {
+    public abstract T[] sort(T[] inputArray);
 }

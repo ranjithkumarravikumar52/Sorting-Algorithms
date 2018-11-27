@@ -1,6 +1,6 @@
 package sortalgorithms;
 
-public class MergeSort extends SortAlgorithm {
+public class MergeSort extends SortAlgorithm<Integer> {
 
     /**
      * No new arrays is created during splitting phase - logical splitting
@@ -8,7 +8,7 @@ public class MergeSort extends SortAlgorithm {
      * O(n*logn)
      * Stable Algorithm
      */
-    private int[] mergeSort(int[] inputArray) {
+    private Integer[] mergeSort(Integer[] inputArray) {
         int start = 0;
         int end = inputArray.length;
         splitForMergeSort(inputArray, start, end);
@@ -19,7 +19,7 @@ public class MergeSort extends SortAlgorithm {
     /**
      * end index is always one greater than the last element's index
      */
-    private void splitForMergeSort(int[] array, int start, int end) {
+    private void splitForMergeSort(Integer[] array, int start, int end) {
         int mid = (start + end) / 2;
 
         if (end - start > 1) {
@@ -33,7 +33,7 @@ public class MergeSort extends SortAlgorithm {
 
     }
 
-    private void mergeForMergeSort(int[] array, int start, int mid, int end) {
+    private void mergeForMergeSort(Integer[] array, int start, int mid, int end) {
         int i = start;
         int j = mid;
         int tempIndex = 0;
@@ -48,12 +48,15 @@ public class MergeSort extends SortAlgorithm {
         while (i < mid) {
             tempArray[tempIndex++] = array[i++];
         }
-        System.arraycopy(tempArray, 0, array, 0 + start, end - start);
+//        System.arraycopy(tempArray, 0, array, start, end - start);
+        for (int sourceIndex = 0, destinationIndex = start; sourceIndex < end - start; sourceIndex++, destinationIndex++) {
+            array[destinationIndex] = tempArray[sourceIndex];
+        }
 
     }
 
     @Override
-    public int[] sort(int[] inputArray) {
+    public Integer[] sort(Integer[] inputArray) {
         return mergeSort(inputArray);
     }
 }

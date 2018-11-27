@@ -1,14 +1,14 @@
 package sortalgorithms;
 
-public class QuickSort extends SortAlgorithm {
+public class QuickSort extends SortAlgorithm<Integer> {
 
-    private int[] quickSort(int[] inputArray) {
+    private Integer[] quickSort(Integer[] inputArray) {
         doQuickSort(inputArray, 0, inputArray.length);
         return inputArray;
     }
 
 
-    private void doQuickSort(int[] localArray, int start, int end) {
+    private void doQuickSort(Integer[] localArray, int start, int end) {
 
         if (end - start < 2) {
             return;
@@ -34,7 +34,7 @@ public class QuickSort extends SortAlgorithm {
      * traverse from the start of the array
      * look for position where element > pivot
      */
-    private int traverseFromStart(int[] localArray, int pivot, int i, int j) {
+    private int traverseFromStart(Integer[] localArray, int pivot, int i, int j) {
         while (i < j && localArray[++i] <= pivot) ;
         if (i < j) {
             localArray[j] = localArray[i];
@@ -46,7 +46,7 @@ public class QuickSort extends SortAlgorithm {
      * traverse from the end of the array
      * look for position element < pivot
      */
-    private int traverseFromEnd(int[] localArray, int pivot, int i, int j) {
+    private int traverseFromEnd(Integer[] localArray, int pivot, int i, int j) {
         while (i < j && localArray[--j] >= pivot) ;
         if (i < j) {
             localArray[i] = localArray[j];
@@ -55,7 +55,7 @@ public class QuickSort extends SortAlgorithm {
     }
 
     @Override
-    public int[] sort(int[] inputArray) {
+    public Integer[] sort(Integer[] inputArray) {
         return quickSort(inputArray);
     }
 }

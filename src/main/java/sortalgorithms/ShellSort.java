@@ -5,12 +5,10 @@
  */
 package sortalgorithms;
 
-public class ShellSort extends SortAlgorithm {
+public class ShellSort extends SortAlgorithm<Integer> {
 
 
-    private int[] shellSort(int[] inputArray) {
-        int[] localArray = new int[inputArray.length];
-        System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
+    private Integer[] shellSort(Integer[] localArray) {
         for (int gap = localArray.length / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < localArray.length; i++) {
                 int newElement = localArray[i];
@@ -26,7 +24,7 @@ public class ShellSort extends SortAlgorithm {
     }
 
     @Override
-    public int[] sort(int[] inputArray) {
+    public Integer[] sort(Integer[] inputArray) {
         return shellSort(inputArray);
     }
 }

@@ -10,8 +10,8 @@ public abstract class Generator<T> {
     private T[] generatedArray;
     protected Randomization<T> randomization;
 
-    protected abstract T[] generateArray();
+    public abstract T[] generateArray();
 
-    protected abstract T[] generateArray(int size, T minRange, T maxRange) throws Exception;
+    public abstract T[] generateArray(int size, T minRange, T maxRange) throws Exception;
 
 }

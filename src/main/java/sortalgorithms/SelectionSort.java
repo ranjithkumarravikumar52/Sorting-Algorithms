@@ -5,14 +5,12 @@
  */
 package sortalgorithms;
 
-import util.swapelements.IntSwappable;
+import util.swapelements.ObjectSwappable;
 
-public class SelectionSort extends SortAlgorithm implements IntSwappable {
+public class SelectionSort extends SortAlgorithm<Integer> implements ObjectSwappable<Integer> {
 
 
-    private int[] selectionSort(int[] inputArray) {
-        int[] localArray = new int[inputArray.length];
-        System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
+    private Integer[] selectionSort(Integer[] localArray) {
         for (int lastUnsortedIndex = localArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             int maxIndex = 0;
             for (int arrayIndex = 1; arrayIndex <= lastUnsortedIndex; arrayIndex++) {
@@ -26,12 +24,12 @@ public class SelectionSort extends SortAlgorithm implements IntSwappable {
     }
 
     @Override
-    public int[] sort(int[] inputArray) {
+    public Integer[] sort(Integer[] inputArray) {
         return selectionSort(inputArray);
     }
 
     @Override
-    public boolean swap(int[] array, int firstIndex, int secondIndex) {
+    public boolean swap(Integer[] array, int firstIndex, int secondIndex) {
         if (firstIndex == secondIndex) {
             return false;
         }

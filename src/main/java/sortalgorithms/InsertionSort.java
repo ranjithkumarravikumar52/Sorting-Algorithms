@@ -1,11 +1,8 @@
 package sortalgorithms;
 
-public class InsertionSort extends SortAlgorithm {
+public class InsertionSort extends SortAlgorithm<Integer> {
 
-    private int[] insertionSort(int[] inputArray) {
-
-        int[] localArray = new int[inputArray.length];
-        System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
+    private Integer[] insertionSort(Integer[] localArray) {
 
         for (int firstUnsortedIndex = 1; firstUnsortedIndex < localArray.length; firstUnsortedIndex++) {
             int newElement = localArray[firstUnsortedIndex];
@@ -21,7 +18,7 @@ public class InsertionSort extends SortAlgorithm {
     }
 
     @Override
-    public int[] sort(int[] inputArray) {
+    public Integer[] sort(Integer[] inputArray) {
         return insertionSort(inputArray);
     }
 }

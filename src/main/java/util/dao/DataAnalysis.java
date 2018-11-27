@@ -2,6 +2,8 @@ package util.dao;
 
 import util.metric.MetricMeasure;
 
+import java.util.Arrays;
+
 public abstract class DataAnalysis<T> {
     private String sortAlgorithmName;
     private int dataSize;
@@ -18,24 +20,9 @@ public abstract class DataAnalysis<T> {
         this.outputArray = outputArray;
     }
 
-    public void setSortAlgorithmName(String sortAlgorithmName) {
-        this.sortAlgorithmName = sortAlgorithmName;
-    }
-
-    public void setDataSize(int dataSize) {
-        this.dataSize = dataSize;
-    }
-
-    public void setMetricMeasure(MetricMeasure metricMeasure) {
-        this.metricMeasure = metricMeasure;
-    }
 
     public void setInputArray(T[] inputArray) {
         this.inputArray = inputArray;
-    }
-
-    public void setOutputArray(T[] outputArray) {
-        this.outputArray = outputArray;
     }
 
     public String getSortAlgorithmName() {
@@ -56,5 +43,16 @@ public abstract class DataAnalysis<T> {
 
     public T[] getOutputArray() {
         return outputArray;
+    }
+
+    @Override
+    public String toString() {
+        return "DataAnalysis{" +
+                "sortAlgorithmName='" + sortAlgorithmName + '\'' +
+                ", dataSize=" + dataSize +
+                ", metricMeasure=" + metricMeasure.getTotalMetric() +
+                ", inputArray=" + Arrays.toString(inputArray) +
+                ", outputArray=" + Arrays.toString(outputArray) +
+                '}';
     }
 }

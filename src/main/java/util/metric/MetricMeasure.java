@@ -1,5 +1,5 @@
 package util.metric;
 
-public interface MetricMeasure<T> {
-    T getTotalMetric();
+public abstract class MetricMeasure<T> {
+    public abstract T getTotalMetric();
 }
