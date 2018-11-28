@@ -14,6 +14,12 @@
 
 
 
+#### Sequential Sorting 10,000 elements: Analysis (After quick sort optimization)
+![10,000 elements1](src/main/resources/10,000-elements-after-quick-sort-optimization-1.png?raw=true)
+
+#### Sequential Sorting 10,000 elements: Analysis (After quick sort optimization)
+![10,000 elements2](src/main/resources/10,000-elements-after-quick-sort-optimization-1.png?raw=true)
+
 #### Issues
 * [Generic array creation](https://stackoverflow.com/questions/7131652/generic-array-creation-error/23034391)
 * [How to increase java heap size in intelliJ](https://www.jetbrains.com/help/idea/increasing-memory-heap.html)
