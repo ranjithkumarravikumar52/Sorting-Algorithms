@@ -15,9 +15,9 @@ import java.util.List;
 
 public class SequenceSimulationAppTest {
 
-    //    private int[] SIZE = {10, 100, 1000, 10_000, 100_000, 1_000_000, 10_000_000};
-    private int[] SIZE = {100, 1000, 10_000};
     private final int SIMULATION_COUNT = 5;
+    private int[] SIZE = {10, 100, 1000, 10_000, 100_000, 1_000_000, 10_000_000};
+//    private int[] SIZE = {100, 1000, 10_000, 20_000, 30_000, 40_000, 50_000, 60_000, 70_000, 80_000, 90_000, 100_000};
     private Integer[] inputArray;
     private TimeMetric metric = new TimeMetric();
     private DataAnalysis<Integer> integerDataAnalysis;
@@ -36,11 +36,11 @@ public class SequenceSimulationAppTest {
         sortAlgorithms.add(new SelectionSort());
         sortAlgorithms.add(new ShellSort());
 
-        for(int count = 1; count <= SIMULATION_COUNT; count++){
+        for (int count = 1; count <= SIMULATION_COUNT; count++) {
             for (int i : SIZE) {
                 inputArray = new IntegerArrayGenerator().generateArray(i, 1, 11);
                 doOneRoundOfSimulation(sortAlgorithms, i);
-                System.out.println("Simulation: "+count+" completed for " + i + " size");
+                System.out.println("Simulation: " + count + " completed for " + i + " size");
                 System.out.println();
             }
         }

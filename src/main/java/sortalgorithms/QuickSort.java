@@ -3,55 +3,37 @@ package sortalgorithms;
 public class QuickSort extends SortAlgorithm<Integer> {
 
     private Integer[] quickSort(Integer[] inputArray) {
-        doQuickSort(inputArray, 0, inputArray.length);
+        doQuickSort(inputArray, 0, inputArray.length - 1);
         return inputArray;
     }
 
 
-    private void doQuickSort(Integer[] localArray, int start, int end) {
+    private int partition(Integer[] a, int p, int r) {
 
-        if (end - start < 2) {
-            return;
+        int x = a[p];
+        int i = p - 1;
+        int j = r + 1;
+
+        while (true) {
+            while (++i < r && a[i] < x) ;
+            while (--j > p && a[j] > x) ;
+
+            if (i < j) {
+                int tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+            } else {
+                return j;
+            }
         }
-
-        int pivot = localArray[start];
-        int i = start;
-        int j = end;
-
-        while (i < j) {
-            j = traverseFromEnd(localArray, pivot, i, j);
-            i = traverseFromStart(localArray, pivot, i, j);
-        }
-
-        //if code reaches here then i == j
-        localArray[i] = pivot;
-        doQuickSort(localArray, start, i);
-        doQuickSort(localArray, i + 1, end);
-
     }
 
-    /**
-     * traverse from the start of the array
-     * look for position where element > pivot
-     */
-    private int traverseFromStart(Integer[] localArray, int pivot, int i, int j) {
-        while (i < j && localArray[++i] <= pivot) ;
-        if (i < j) {
-            localArray[j] = localArray[i];
+    public void doQuickSort(Integer[] a, int p, int r) {
+        if (p < r) {
+            int q = partition(a, p, r);
+            doQuickSort(a, p, q);
+            doQuickSort(a, q + 1, r);
         }
-        return i;
-    }
-
-    /**
-     * traverse from the end of the array
-     * look for position element < pivot
-     */
-    private int traverseFromEnd(Integer[] localArray, int pivot, int i, int j) {
-        while (i < j && localArray[--j] >= pivot) ;
-        if (i < j) {
-            localArray[i] = localArray[j];
-        }
-        return j;
     }
 
     @Override
