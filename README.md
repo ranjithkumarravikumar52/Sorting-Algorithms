@@ -1,24 +1,9 @@
 # Sorting-Algorithms 
 
-#### Sequential Sorting 10,000 elements: Analysis (After quick sort optimization)
-![10,000 elements2](src/main/resources/10,000-elements-after-quick-sort-optimization-2.png?raw=true)
-
-#### Sequential Sorting 10,000 elements: Analysis
-![10,000 elements2](src/main/resources/10000-elements-sequential-2.png?raw=true)
-
-#### Sequential Sorting 10,000 elements: Analysis
-![10,000 elements1](src/main/resources/10000-elements-sequential-1.png?raw=true)
-
-#### Sequential Sorting 10,000 elements: Analysis (After quick sort optimization)
-![10,000 elements1](src/main/resources/10,000-elements-after-quick-sort-optimization-1.png?raw=true)
-
-
-
-#### Sequential Sorting 10,000 elements: Analysis (After quick sort optimization)
-![10,000 elements1](src/main/resources/10,000-elements-after-quick-sort-optimization-1.png?raw=true)
-
-#### Sequential Sorting 10,000 elements: Analysis (After quick sort optimization)
-![10,000 elements2](src/main/resources/10,000-elements-after-quick-sort-optimization-1.png?raw=true)
+* [Link](https://docs.google.com/spreadsheets/d/e/2PACX-1vSV9FbZm-52D0zpN28qOJVfi9IU_pwQvMwwhfEVKHUz8rM9t-AYJclo_bbodlUM8pXRVkhW1OS5HNMv/pubchart?oid=1641898593&format=interactive)
+* ![image here](https://docs.google.com/spreadsheets/d/e/2PACX-1vSV9FbZm-52D0zpN28qOJVfi9IU_pwQvMwwhfEVKHUz8rM9t-AYJclo_bbodlUM8pXRVkhW1OS5HNMv/pubchart?oid=1641898593&format=interactive)
+* [![Link](https://docs.google.com/spreadsheets/d/e/2PACX-1vSV9FbZm-52D0zpN28qOJVfi9IU_pwQvMwwhfEVKHUz8rM9t-AYJclo_bbodlUM8pXRVkhW1OS5HNMv/pubchart?oid=1641898593&format=interactive)](https://docs.google.com/spreadsheets/d/e/2PACX-1vSV9FbZm-52D0zpN28qOJVfi9IU_pwQvMwwhfEVKHUz8rM9t-AYJclo_bbodlUM8pXRVkhW1OS5HNMv/pubchart?oid=1641898593&format=interactive)
+* ![From resources](src/main/resources/Sort-random-elements-in-ascending-order-Sequential-Processing.png)
 
 #### Issues
 * [Generic array creation](https://stackoverflow.com/questions/7131652/generic-array-creation-error/23034391)
