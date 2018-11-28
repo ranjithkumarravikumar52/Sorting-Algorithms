@@ -16,12 +16,13 @@ import java.util.List;
 public class SequenceSimulationAppTest {
 
     private final int SIMULATION_COUNT = 5;
-    private int[] SIZE = {10, 100, 1000, 10_000, 100_000, 1_000_000, 10_000_000};
+//    private int[] SIZE = {10, 100, 1000, 10_000, 100_000, 1_000_000, 10_000_000};
+    private int[] SIZE = {10_000};
 //    private int[] SIZE = {100, 1000, 10_000, 20_000, 30_000, 40_000, 50_000, 60_000, 70_000, 80_000, 90_000, 100_000};
     private Integer[] inputArray;
     private TimeMetric metric = new TimeMetric();
     private DataAnalysis<Integer> integerDataAnalysis;
-    private String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure", "inputArray", "outputArray"};
+    private String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure"};
     private FormatType excel = new ExcelFormat(userInputHeaders);
     private DataPersistence dataPersistence;
 
@@ -52,10 +53,10 @@ public class SequenceSimulationAppTest {
             Integer[] localCopy = arraysCopy(inputArray);
 
             metric.startTime();
-            Integer[] outputArray = algorithm.sort(localCopy);
+            algorithm.sort(localCopy);
             metric.endTime();
 
-            integerDataAnalysis = new IntegerDataAnalysis(algorithm.getClass().getSimpleName(), SIZE, metric, inputArray, outputArray);
+            integerDataAnalysis = new IntegerDataAnalysis(algorithm.getClass().getSimpleName(), SIZE, metric);
 
             dataPersistence = new DataPersistence(integerDataAnalysis, excel);
             dataPersistence.saveData();

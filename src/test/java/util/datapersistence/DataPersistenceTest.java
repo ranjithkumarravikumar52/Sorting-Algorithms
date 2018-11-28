@@ -22,13 +22,13 @@ public class DataPersistenceTest {
         MetricMeasure metricMeasure = new TimeMetric();
         Integer[] inputArray = new Integer[]{3, 2, 1};
         Integer[] outputArray = new Integer[]{1, 2, 3};
-        dao = new IntegerDataAnalysis(sortAlgorithmName, dataSize,  metricMeasure, inputArray, outputArray);
+        dao = new IntegerDataAnalysis(sortAlgorithmName, dataSize,  metricMeasure);
     }
 
 
     @Test
     public void saveData() {
-        String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure", "inputArray", "outputArray"};
+        String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure"};
         FormatType excel = new ExcelFormat(userInputHeaders);
         DataPersistence dataPersistence = new DataPersistence(dao, excel);
         assertTrue("Failed to save data", dataPersistence.saveData());

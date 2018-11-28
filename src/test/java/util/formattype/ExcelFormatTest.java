@@ -23,7 +23,7 @@ public class ExcelFormatTest {
         MetricMeasure metricMeasure = new TimeMetric();
         Integer[] inputArray = new Integer[]{3, 2, 1};
         Integer[] outputArray = new Integer[]{1, 2, 3};
-        dao = new IntegerDataAnalysis(sortAlgorithmName, dataSize,  metricMeasure, inputArray, outputArray);
+        dao = new IntegerDataAnalysis(sortAlgorithmName, dataSize,  metricMeasure);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class ExcelFormatTest {
 
     @Test
     public void convert_checkExcelHeaders() {
-        String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure", "inputArray", "outputArray"};
+        String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure"};
         ExcelFormat excel = new ExcelFormat(userInputHeaders);
         String actualHeaders = null;
         for(String s: ExcelFormat.getResultMap().keySet()){
@@ -43,14 +43,14 @@ public class ExcelFormatTest {
 
     @Test
     public void save_checkExcelSave() {
-        String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure", "inputArray", "outputArray"};
+        String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure"};
         ExcelFormat excel = new ExcelFormat(userInputHeaders);
         assertTrue("Failed to save dao in excel sheet",excel.save(dao));
     }
 
     @Test
     public void save_checkExcelSaveForMultipleData() {
-        String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure", "inputArray", "outputArray"};
+        String[] userInputHeaders = {"sortAlgorithmName", "dataSize", "metricMeasure"};
         ExcelFormat excel = new ExcelFormat(userInputHeaders);
         assertTrue("Failed to save dao in excel sheet",excel.save(dao));
         assertTrue("Failed to save dao in excel sheet",excel.save(dao));
