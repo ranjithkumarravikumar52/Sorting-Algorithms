@@ -7,7 +7,6 @@ public abstract class DataAnalysis<T> {
     private int dataSize;
     private MetricMeasure metricMeasure;
 
-    //TODO builder pattern here
     public DataAnalysis(String sortAlgorithmName, int dataSize, MetricMeasure metricMeasure) {
         this.sortAlgorithmName = sortAlgorithmName;
         this.dataSize = dataSize;
