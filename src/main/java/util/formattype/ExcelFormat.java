@@ -79,14 +79,11 @@ public class ExcelFormat implements FormatType {
         String sortAlgorithmName = dao.getSortAlgorithmName();
         String dataSize = Integer.toString(dao.getDataSize());
         String metricMeasure = dao.getMetricMeasure().toString();
-        String inputArray = Arrays.toString(dao.getInputArray());
-        String outputArray = Arrays.toString(dao.getOutputArray());
+
         resultMap.put(Integer.toString(i++), new Object[]{
                 sortAlgorithmName,
                 dataSize,
-                metricMeasure,
-                inputArray,
-                outputArray
+                metricMeasure
         });
         return resultMap;
     }

@@ -1,10 +1,17 @@
 # Sorting-Algorithms 
 
-#### Sequential Sorting 10,000 elements: Analysis
-![10,000 elements1](src/main/resources/10000-elements-sequential-1.png?raw=true)
+#### Sequential Sorting 10,000 elements: Analysis (After quick sort optimization)
+![10,000 elements2](src/main/resources/10,000-elements-after-quick-sort-optimization-2.png?raw=true)
 
 #### Sequential Sorting 10,000 elements: Analysis
 ![10,000 elements2](src/main/resources/10000-elements-sequential-2.png?raw=true)
+
+#### Sequential Sorting 10,000 elements: Analysis
+![10,000 elements1](src/main/resources/10000-elements-sequential-1.png?raw=true)
+
+#### Sequential Sorting 10,000 elements: Analysis (After quick sort optimization)
+![10,000 elements1](src/main/resources/10,000-elements-after-quick-sort-optimization-1.png?raw=true)
+
 
 
 #### Issues
