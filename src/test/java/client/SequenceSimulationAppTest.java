@@ -18,8 +18,8 @@ public class SequenceSimulationAppTest {
 
     private final int SIMULATION_COUNT = 10;
     //    private int[] SIZE = {10, 100, 1000, 10_000, 100_000, 1_000_000, 10_000_000};
-    //    private int[] SIZE = {25_000};
-    private int[] SIZE = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10_000, 20_000, 30_000, 40_000, 50_000, 60_000, 70_000, 80_000, 90_000, 100_000};
+        private int[] SIZE = {25_000};
+//    private int[] SIZE = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10_000, 20_000, 30_000, 40_000, 50_000, 60_000, 70_000, 80_000, 90_000, 100_000};
     private Integer[] inputArray;
     private TimeMetric metric = new TimeMetric();
     private DataAnalysis<Integer> integerDataAnalysis;
