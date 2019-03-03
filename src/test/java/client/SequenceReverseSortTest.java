@@ -1,15 +1,15 @@
 package client;
 
+import com.sortingalgorithm.sortalgorithms.*;
+import com.sortingalgorithm.util.dao.DataAnalysis;
+import com.sortingalgorithm.util.dao.IntegerDataAnalysis;
+import com.sortingalgorithm.util.datapersistence.DataPersistence;
+import com.sortingalgorithm.util.debugcolor.DebugColor;
+import com.sortingalgorithm.util.formattype.ExcelFormat;
+import com.sortingalgorithm.util.formattype.FormatType;
+import com.sortingalgorithm.util.generator.IntegerArrayGenerator;
+import com.sortingalgorithm.util.metric.TimeMetric;
 import org.junit.Test;
-import sortalgorithms.*;
-import util.dao.DataAnalysis;
-import util.dao.IntegerDataAnalysis;
-import util.datapersistence.DataPersistence;
-import util.debugcolor.DebugColor;
-import util.formattype.ExcelFormat;
-import util.formattype.FormatType;
-import util.generator.IntegerArrayGenerator;
-import util.metric.TimeMetric;
 
 import java.util.ArrayList;
 import java.util.Arrays;

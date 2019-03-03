@@ -1,17 +1,19 @@
 package client;
 
+import com.sortingalgorithm.config.AppConfig;
+import com.sortingalgorithm.sortalgorithms.SortAlgorithm;
+import com.sortingalgorithm.util.dao.DataAnalysis;
+import com.sortingalgorithm.util.dao.IntegerDataAnalysis;
+import com.sortingalgorithm.util.datapersistence.DataPersistence;
+import com.sortingalgorithm.util.debugcolor.DebugColor;
+import com.sortingalgorithm.util.formattype.ExcelFormat;
+import com.sortingalgorithm.util.formattype.FormatType;
+import com.sortingalgorithm.util.generator.IntegerArrayGenerator;
+import com.sortingalgorithm.util.metric.TimeMetric;
 import org.junit.Test;
-import sortalgorithms.*;
-import util.dao.DataAnalysis;
-import util.dao.IntegerDataAnalysis;
-import util.datapersistence.DataPersistence;
-import util.debugcolor.DebugColor;
-import util.formattype.ExcelFormat;
-import util.formattype.FormatType;
-import util.generator.IntegerArrayGenerator;
-import util.metric.TimeMetric;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SequenceSimulationAppTest {
@@ -29,14 +31,12 @@ public class SequenceSimulationAppTest {
 
     @Test
     public void checkSequentialSimulation() throws Exception {
-        //TODO factory pattern here
-        List<SortAlgorithm<Integer>> sortAlgorithms = new ArrayList<>();
-        sortAlgorithms.add(new BubbleSort());
-        sortAlgorithms.add(new InsertionSort());
-        sortAlgorithms.add(new MergeSort());
-        sortAlgorithms.add(new QuickSort());
-        sortAlgorithms.add(new SelectionSort());
-        sortAlgorithms.add(new ShellSort());
+        AnnotationConfigApplicationContext annotationConfigApplicationContext
+                = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        //List<SortAlgorithm>.class
+        SortAlgorithm[] getAllSortClasses = annotationConfigApplicationContext.getBean("getAllSortClasses", SortAlgorithm[].class);
+        List<SortAlgorithm<Integer>> sortAlgorithms = Arrays.asList(getAllSortClasses);
 
         for (int i : SIZE) {
             for (int count = 1; count <= SIMULATION_COUNT; count++) {

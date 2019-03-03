@@ -1,11 +1,13 @@
 package sortalgorithms;
 
+import com.sortingalgorithm.sortalgorithms.MergeSort;
+import com.sortingalgorithm.sortalgorithms.SortAlgorithm;
+import com.sortingalgorithm.util.generator.Generator;
+import com.sortingalgorithm.util.generator.IntegerArrayGenerator;
 import org.junit.Before;
 import org.junit.Test;
-import util.generator.Generator;
-import util.generator.IntegerArrayGenerator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class MergeSortTest {
     //    private int[] SIZE = {10, 100, 1000, 10_000, 100_000, 1_000_000, 10_000_000, 100_000_000};

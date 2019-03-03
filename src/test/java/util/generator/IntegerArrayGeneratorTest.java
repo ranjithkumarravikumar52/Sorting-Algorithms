@@ -1,5 +1,7 @@
 package util.generator;
 
+import com.sortingalgorithm.util.generator.Generator;
+import com.sortingalgorithm.util.generator.IntegerArrayGenerator;
 import org.junit.Before;
 import org.junit.Test;
 
