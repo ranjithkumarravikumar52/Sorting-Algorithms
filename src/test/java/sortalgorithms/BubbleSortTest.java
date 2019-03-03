@@ -1,9 +1,11 @@
 package sortalgorithms;
 
+import com.sortingalgorithm.sortalgorithms.BubbleSort;
+import com.sortingalgorithm.sortalgorithms.SortAlgorithm;
+import com.sortingalgorithm.util.generator.Generator;
+import com.sortingalgorithm.util.generator.IntegerArrayGenerator;
 import org.junit.Before;
 import org.junit.Test;
-import util.generator.Generator;
-import util.generator.IntegerArrayGenerator;
 
 import static org.junit.Assert.assertArrayEquals;
 

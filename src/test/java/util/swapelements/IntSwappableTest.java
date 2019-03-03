@@ -1,9 +1,10 @@
 package util.swapelements;
 
+import com.sortingalgorithm.util.swapelements.ObjectSwappable;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class IntSwappableTest{
 
@@ -22,7 +23,7 @@ public class IntSwappableTest{
     }
 }
 
-class IntSwappableImplements implements ObjectSwappable<Integer>{
+class IntSwappableImplements implements ObjectSwappable<Integer> {
 
     @Override
     public boolean swap(Integer[] array, int firstIndex, int secondIndex) {

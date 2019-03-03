@@ -1,5 +1,6 @@
 package util.randomization;
 
+import com.sortingalgorithm.util.randomization.IntegerRandomization;
 import org.junit.Test;
 
 import java.util.ArrayList;

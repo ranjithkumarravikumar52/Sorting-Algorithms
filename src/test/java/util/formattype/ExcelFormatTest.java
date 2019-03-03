@@ -1,11 +1,12 @@
 package util.formattype;
 
+import com.sortingalgorithm.util.dao.DataAnalysis;
+import com.sortingalgorithm.util.dao.IntegerDataAnalysis;
+import com.sortingalgorithm.util.formattype.ExcelFormat;
+import com.sortingalgorithm.util.metric.MetricMeasure;
+import com.sortingalgorithm.util.metric.TimeMetric;
 import org.junit.Before;
 import org.junit.Test;
-import util.dao.DataAnalysis;
-import util.dao.IntegerDataAnalysis;
-import util.metric.MetricMeasure;
-import util.metric.TimeMetric;
 
 import java.util.Arrays;
 
