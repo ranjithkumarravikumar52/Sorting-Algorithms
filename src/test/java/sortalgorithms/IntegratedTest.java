@@ -1,9 +1,10 @@
 package sortalgorithms;
 
+import com.sortingalgorithm.sortalgorithms.*;
+import com.sortingalgorithm.util.generator.Generator;
+import com.sortingalgorithm.util.generator.IntegerArrayGenerator;
 import org.junit.Before;
 import org.junit.Test;
-import util.generator.Generator;
-import util.generator.IntegerArrayGenerator;
 
 import java.util.ArrayList;
 import java.util.List;

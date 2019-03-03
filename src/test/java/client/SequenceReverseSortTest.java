@@ -1,7 +1,6 @@
 package client;
 
-import com.sortingalgorithm.config.AppConfig;
-import com.sortingalgorithm.sortalgorithms.SortAlgorithm;
+import com.sortingalgorithm.sortalgorithms.*;
 import com.sortingalgorithm.util.dao.DataAnalysis;
 import com.sortingalgorithm.util.dao.IntegerDataAnalysis;
 import com.sortingalgorithm.util.datapersistence.DataPersistence;
@@ -11,17 +10,16 @@ import com.sortingalgorithm.util.formattype.FormatType;
 import com.sortingalgorithm.util.generator.IntegerArrayGenerator;
 import com.sortingalgorithm.util.metric.TimeMetric;
 import org.junit.Test;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SequenceSimulationAppTest {
-
+public class SequenceReverseSortTest {
     private final int SIMULATION_COUNT = 10;
     //    private int[] SIZE = {10, 100, 1000, 10_000, 100_000, 1_000_000, 10_000_000};
-        private int[] SIZE = {25_000};
-//    private int[] SIZE = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10_000, 20_000, 30_000, 40_000, 50_000, 60_000, 70_000, 80_000, 90_000, 100_000};
+//        private int[] SIZE = {10};
+    private int[] SIZE = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10_000, 20_000, 30_000, 40_000, 50_000, 60_000, 70_000, 80_000, 90_000, 100_000};
     private Integer[] inputArray;
     private TimeMetric metric = new TimeMetric();
     private DataAnalysis<Integer> integerDataAnalysis;
@@ -31,16 +29,19 @@ public class SequenceSimulationAppTest {
 
     @Test
     public void checkSequentialSimulation() throws Exception {
-        AnnotationConfigApplicationContext annotationConfigApplicationContext
-                = new AnnotationConfigApplicationContext(AppConfig.class);
-
-        //List<SortAlgorithm>.class
-        SortAlgorithm[] getAllSortClasses = annotationConfigApplicationContext.getBean("getAllSortClasses", SortAlgorithm[].class);
-        List<SortAlgorithm<Integer>> sortAlgorithms = Arrays.asList(getAllSortClasses);
+        //TODO factory pattern here
+        List<SortAlgorithm<Integer>> sortAlgorithms = new ArrayList<>();
+        sortAlgorithms.add(new BubbleSort());
+        sortAlgorithms.add(new InsertionSort());
+        sortAlgorithms.add(new MergeSort());
+        sortAlgorithms.add(new QuickSort());
+        sortAlgorithms.add(new SelectionSort());
+        sortAlgorithms.add(new ShellSort());
 
         for (int i : SIZE) {
             for (int count = 1; count <= SIMULATION_COUNT; count++) {
                 inputArray = new IntegerArrayGenerator().generateArray(i, 1, 11);
+                Arrays.sort(inputArray, (o1, o2) -> Integer.compare(o2,o1));
                 long sum = doOneRoundOfSimulation(sortAlgorithms, i);
 
                 System.out.println(new StringBuilder()
@@ -57,7 +58,8 @@ public class SequenceSimulationAppTest {
                         .append(sum)
                         .append(DebugColor.ANSI_RESET)
                         .append(" ms")
-                        .toString());
+                        .toString()
+                );
                 System.out.println();
             }
         }
