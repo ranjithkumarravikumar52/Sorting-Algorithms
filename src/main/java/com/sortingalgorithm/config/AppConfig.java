@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan("wholepackage")
+@ComponentScan("com.sortingalgorithm")
 @EnableAspectJAutoProxy
 public class AppConfig {
 	@Bean
@@ -39,8 +39,9 @@ public class AppConfig {
 	public SortAlgorithm<Integer> shellSort() {
 		return new ShellSort();
 	}
+
 	@Bean(name = "getAllSortClasses")
-	public SortAlgorithm<Integer>[] getAllSortClasses(){
+	public SortAlgorithm[] getAllSortClasses() {
 		return new SortAlgorithm[]{new BubbleSort(), new InsertionSort(), new MergeSort(), new QuickSort(), new SelectionSort(), new ShellSort()};
 	}
 }
