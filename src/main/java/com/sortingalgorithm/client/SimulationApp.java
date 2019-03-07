@@ -16,5 +16,4 @@ public class SimulationApp {
         System.out.println(Arrays.toString(getAllSortClasses));
     }
 
-
 }
