@@ -17,7 +17,17 @@ public class SimulationApp {
         AnnotationConfigApplicationContext annotationConfigApplicationContext
                 = new AnnotationConfigApplicationContext(AppConfig.class);
         SortAlgorithm[] getAllSortClasses = annotationConfigApplicationContext.getBean("getAllSortClasses", SortAlgorithm[].class);
-        log.trace("Beans inside our sort algorithm\n {} ", Arrays.toString(getAllSortClasses));
+        log.info("Beans inside out getAllSortClasses");
+        for(SortAlgorithm<Integer> sortAlgorithm: getAllSortClasses){
+            log.info(sortAlgorithm.getClass().getSimpleName());
+        }
+
+        //basic check
+        for(SortAlgorithm<Integer> sortAlgorithm: getAllSortClasses){
+            Integer[] sort = sortAlgorithm.sort(new Integer[]{3, 3, 2, 1, 4});
+            log.info(Arrays.toString(sort));
+        }
+
     }
 
 }

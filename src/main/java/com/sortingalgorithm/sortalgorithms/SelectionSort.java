@@ -5,11 +5,10 @@
  */
 package com.sortingalgorithm.sortalgorithms;
 
-import com.sortingalgorithm.util.swapelements.ObjectSwappable;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SelectionSort extends SortAlgorithm<Integer> implements ObjectSwappable<Integer> {
+public class SelectionSort extends SortAlgorithm<Integer> {
 
 
     private Integer[] selectionSort(Integer[] localArray) {
@@ -30,8 +29,8 @@ public class SelectionSort extends SortAlgorithm<Integer> implements ObjectSwapp
         return selectionSort(inputArray);
     }
 
-    @Override
-    public boolean swap(Integer[] array, int firstIndex, int secondIndex) {
+
+    private boolean swap(Integer[] array, int firstIndex, int secondIndex) {
         if (firstIndex == secondIndex) {
             return false;
         }
