@@ -1,13 +1,15 @@
 package com.sortingalgorithm.util.metric;
 
-public class TimeMetric extends MetricMeasure<Long>{
+public class TimeMetric<T extends Long> implements MetricMeasure<Long>{
 
-    private long startTime;
-    private long endTime;
+    private Long startTime;
+    private Long endTime;
+    private Long totalTime;
 
     @Override
     public Long getTotalMetric() {
-        return endTime - startTime;
+        totalTime =  endTime - startTime;
+        return totalTime;
     }
 
     public void startTime(){
@@ -20,6 +22,6 @@ public class TimeMetric extends MetricMeasure<Long>{
 
     @Override
     public String toString() {
-        return Long.toString(getTotalMetric());
+        return Long.toString(totalTime);
     }
 }

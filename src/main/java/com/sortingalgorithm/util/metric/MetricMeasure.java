@@ -1,5 +1,5 @@
 package com.sortingalgorithm.util.metric;
 
-public abstract class MetricMeasure<T> {
-    public abstract T getTotalMetric();
+public interface MetricMeasure<T> {
+    T getTotalMetric();
 }
