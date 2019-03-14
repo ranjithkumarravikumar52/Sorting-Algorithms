@@ -2,12 +2,12 @@ package com.sortingalgorithm.util.generator;
 
 import com.sortingalgorithm.util.randomization.ShortDefaultRandomization;
 
-public class ShortArrayGenerator<T extends Short> implements Generator<Short> {
+public class ShortArrayGenerator implements Generator<Short> {
 	@Override
 	public Short[] generateArray(int size) {
-		T[] elements = (T[]) new Object[size];
+		Short[] elements = new Short[size];
 		for(int i = 0; i < size; i++){
-			elements[i] = (T) new ShortDefaultRandomization().getRandomElement();
+			elements[i] = new ShortDefaultRandomization().getRandomElement();
 		}
 		return elements;
 	}

@@ -1,4 +1,4 @@
-package com.sortingalgorithm.util.formattype;
+package com.sortingalgorithm.util.format;
 
 import com.sortingalgorithm.util.dao.DataAnalysis;
 
