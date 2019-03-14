@@ -1,7 +1,7 @@
 package com.sortingalgorithm.util.datapersistence;
 
 import com.sortingalgorithm.util.dao.DataAnalysis;
-import com.sortingalgorithm.util.formattype.FormatType;
+import com.sortingalgorithm.util.format.FormatType;
 
 public class DataPersistence {
 

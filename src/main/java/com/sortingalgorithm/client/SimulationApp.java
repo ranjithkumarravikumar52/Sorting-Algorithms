@@ -2,6 +2,8 @@ package com.sortingalgorithm.client;
 
 import com.sortingalgorithm.config.AppConfig;
 import com.sortingalgorithm.sortalgorithms.SortAlgorithm;
+import com.sortingalgorithm.util.generator.CharacterArrayGenerator;
+import com.sortingalgorithm.util.generator.Generator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,13 +20,16 @@ public class SimulationApp {
                 = new AnnotationConfigApplicationContext(AppConfig.class);
         SortAlgorithm[] getAllSortClasses = annotationConfigApplicationContext.getBean("getAllSortClasses", SortAlgorithm[].class);
         log.info("Beans inside out getAllSortClasses");
-        for(SortAlgorithm<Integer> sortAlgorithm: getAllSortClasses){
+        for(SortAlgorithm sortAlgorithm: getAllSortClasses){
             log.info(sortAlgorithm.getClass().getSimpleName());
         }
 
         //basic check
-        for(SortAlgorithm<Integer> sortAlgorithm: getAllSortClasses){
-            Integer[] sort = sortAlgorithm.sort(new Integer[]{3, 3, 2, 1, 4});
+        for(SortAlgorithm<Character> sortAlgorithm: getAllSortClasses){
+            //Get us a ArrayGenerator of the type Integer
+            Generator<Character> characterGenerator = new CharacterArrayGenerator();
+            Character[] characters = characterGenerator.generateArray(10);
+            Character[] sort = sortAlgorithm.sort(characters);
             log.info(Arrays.toString(sort));
         }
 
