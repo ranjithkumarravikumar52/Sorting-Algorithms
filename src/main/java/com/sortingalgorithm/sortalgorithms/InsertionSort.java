@@ -3,14 +3,14 @@ package com.sortingalgorithm.sortalgorithms;
 import org.springframework.stereotype.Component;
 
 @Component
-public class InsertionSort extends SortAlgorithm<Integer> {
+public class InsertionSort<T extends Comparable<T>> implements SortAlgorithm<T> {
 
-    private Integer[] insertionSort(Integer[] localArray) {
+    private T[] insertionSort(T[] localArray) {
 
         for (int firstUnsortedIndex = 1; firstUnsortedIndex < localArray.length; firstUnsortedIndex++) {
-            int newElement = localArray[firstUnsortedIndex];
+            T newElement = localArray[firstUnsortedIndex];
             int i;
-            for (i = firstUnsortedIndex; i > 0 && localArray[i - 1] > newElement; i--) {
+            for (i = firstUnsortedIndex; i > 0 && localArray[i - 1].compareTo(newElement) > 0; i--) {
                 //shifting to right
                 localArray[i] = localArray[i - 1];
             }
@@ -21,7 +21,7 @@ public class InsertionSort extends SortAlgorithm<Integer> {
     }
 
     @Override
-    public Integer[] sort(Integer[] inputArray) {
+    public T[] sort(T[] inputArray) {
         return insertionSort(inputArray);
     }
 }

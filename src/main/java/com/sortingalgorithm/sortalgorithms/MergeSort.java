@@ -2,8 +2,10 @@ package com.sortingalgorithm.sortalgorithms;
 
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Array;
+
 @Component
-public class MergeSort extends SortAlgorithm<Integer> {
+public class MergeSort<T extends Comparable<? super T>> implements SortAlgorithm<T> {
 
     /**
      * No new arrays is created during splitting phase - logical splitting
@@ -11,18 +13,17 @@ public class MergeSort extends SortAlgorithm<Integer> {
      * O(n*logn)
      * Stable Algorithm
      */
-    private Integer[] mergeSort(Integer[] inputArray) {
+    private T[] mergeSort(T[] inputArray) {
         int start = 0;
         int end = inputArray.length;
         splitForMergeSort(inputArray, start, end);
         return inputArray;
     }
 
-
     /**
      * end index is always one greater than the last element's index
      */
-    private void splitForMergeSort(Integer[] array, int start, int end) {
+    private void splitForMergeSort(T[] array, int start, int end) {
         int mid = (start + end) / 2;
 
         if (end - start > 1) {
@@ -36,13 +37,15 @@ public class MergeSort extends SortAlgorithm<Integer> {
 
     }
 
-    private void mergeForMergeSort(Integer[] array, int start, int mid, int end) {
+    private void mergeForMergeSort(T[] array, int start, int mid, int end) {
         int i = start;
         int j = mid;
         int tempIndex = 0;
-        int[] tempArray = new int[end - start];
+        // int[] tempArray = new int[end - start];
+        T[] tempArray = (T[]) Array.newInstance(array.getClass().getComponentType(), end-start);
         while (i < mid && j < end) {
-            tempArray[tempIndex++] = array[i] <= array[j] ? array[i++] : array[j++];
+            // tempArray[tempIndex++] = array[i] <= array[j] ? array[i++] : array[j++];
+            tempArray[tempIndex++] = array[i].compareTo(array[j]) <= 0 ? array[i++] : array[j++];
         }
 
         while (j < end) {
@@ -59,7 +62,8 @@ public class MergeSort extends SortAlgorithm<Integer> {
     }
 
     @Override
-    public Integer[] sort(Integer[] inputArray) {
+    public T[] sort(T[] inputArray) {
         return mergeSort(inputArray);
     }
+
 }

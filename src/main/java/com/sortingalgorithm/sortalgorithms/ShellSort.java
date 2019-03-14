@@ -7,15 +7,16 @@ package com.sortingalgorithm.sortalgorithms;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ShellSort extends SortAlgorithm<Integer> {
+public class ShellSort<T extends Comparable<T>> implements SortAlgorithm<T> {
 
 
-    private Integer[] shellSort(Integer[] localArray) {
+    private T[] shellSort(T[] localArray) {
         for (int gap = localArray.length / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < localArray.length; i++) {
-                int newElement = localArray[i];
+                T newElement = localArray[i];
                 int j = i;
-                while (j >= gap && localArray[j - gap] > newElement) {
+                // while (j >= gap && localArray[j - gap] > newElement) {
+                while (j >= gap && localArray[j - gap].compareTo(newElement) > 0) {
                     localArray[j] = localArray[j - gap];
                     j = j - gap;
                 }
@@ -26,7 +27,7 @@ public class ShellSort extends SortAlgorithm<Integer> {
     }
 
     @Override
-    public Integer[] sort(Integer[] inputArray) {
+    public T[] sort(T[] inputArray) {
         return shellSort(inputArray);
     }
 }

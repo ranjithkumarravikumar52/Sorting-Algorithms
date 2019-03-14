@@ -8,14 +8,14 @@ package com.sortingalgorithm.sortalgorithms;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SelectionSort extends SortAlgorithm<Integer> {
+public class SelectionSort<T extends Comparable<T>> implements SortAlgorithm<T> {
 
-
-    private Integer[] selectionSort(Integer[] localArray) {
+    private T[] selectionSort(T[] localArray) {
         for (int lastUnsortedIndex = localArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             int maxIndex = 0;
             for (int arrayIndex = 1; arrayIndex <= lastUnsortedIndex; arrayIndex++) {
-                if (localArray[arrayIndex] > localArray[maxIndex]) {
+                // if (localArray[arrayIndex] > localArray[maxIndex]) {
+                if (localArray[arrayIndex].compareTo(localArray[maxIndex]) > 0) {
                     maxIndex = arrayIndex;
                 }
             }
@@ -25,17 +25,17 @@ public class SelectionSort extends SortAlgorithm<Integer> {
     }
 
     @Override
-    public Integer[] sort(Integer[] inputArray) {
+    public T[] sort(T[] inputArray) {
         return selectionSort(inputArray);
     }
 
 
-    private boolean swap(Integer[] array, int firstIndex, int secondIndex) {
+    private boolean swap(T[] array, int firstIndex, int secondIndex) {
         if (firstIndex == secondIndex) {
             return false;
         }
 
-        Integer temp = array[firstIndex];
+        T temp = array[firstIndex];
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = temp;
         return true;

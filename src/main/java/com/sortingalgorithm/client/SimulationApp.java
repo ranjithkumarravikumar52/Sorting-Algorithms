@@ -3,7 +3,6 @@ package com.sortingalgorithm.client;
 import com.sortingalgorithm.config.AppConfig;
 import com.sortingalgorithm.sortalgorithms.SortAlgorithm;
 import com.sortingalgorithm.util.generator.CharacterArrayGenerator;
-import com.sortingalgorithm.util.generator.Generator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -26,11 +25,9 @@ public class SimulationApp {
 
         //basic check
         for(SortAlgorithm<Character> sortAlgorithm: getAllSortClasses){
-            //Get us a ArrayGenerator of the type Integer
-            Generator<Character> characterGenerator = new CharacterArrayGenerator();
-            Character[] characters = characterGenerator.generateArray(10);
+            Character[] characters = new CharacterArrayGenerator().generateArray(10);
             Character[] sort = sortAlgorithm.sort(characters);
-            log.info(Arrays.toString(sort));
+            log.info(sortAlgorithm.getClass().getSimpleName()+"----->"+Arrays.toString(sort));
         }
 
     }
