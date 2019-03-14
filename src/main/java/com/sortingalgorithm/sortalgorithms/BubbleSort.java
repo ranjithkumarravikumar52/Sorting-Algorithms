@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
  * </ul>
  */
 @Component
-public class BubbleSort extends SortAlgorithm<Integer> {
+public class BubbleSort<T extends Comparable<T>> implements SortAlgorithm<T> {
 
-    private Integer[] bubbleSort(Integer[] inputArray) {
+    private T[] bubbleSort(T[] inputArray) {
 
         for (int lastUnsortedIndex = inputArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
-                if (inputArray[i] > inputArray[i + 1]) {
+                if (inputArray[i].compareTo(inputArray[i + 1]) > 0) {
                     swap(inputArray, i, i + 1);
                 }
             }
@@ -25,17 +25,17 @@ public class BubbleSort extends SortAlgorithm<Integer> {
     }
 
     @Override
-    public Integer[] sort(Integer[] inputArray) {
+    public T[] sort(T[] inputArray) {
         return bubbleSort(inputArray);
     }
 
 
-    private boolean swap(Integer[] array, int firstIndex, int secondIndex) {
+    private boolean swap(T[] array, int firstIndex, int secondIndex) {
         if (firstIndex == secondIndex) {
             return false;
         }
 
-        Integer temp = array[firstIndex];
+        T temp = array[firstIndex];
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = temp;
         return true;

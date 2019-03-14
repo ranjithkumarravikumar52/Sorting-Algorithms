@@ -16,6 +16,6 @@ package com.sortingalgorithm.sortalgorithms;
 import org.springframework.stereotype.Component;
 
 @Component
-abstract public class SortAlgorithm<T> {
-    public abstract T[] sort(T[] inputArray);
+public interface SortAlgorithm<T> {
+    T[] sort(T[] inputArray);
 }
