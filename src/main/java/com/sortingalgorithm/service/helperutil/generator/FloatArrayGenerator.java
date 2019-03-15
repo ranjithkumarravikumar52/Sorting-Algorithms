@@ -1,0 +1,14 @@
+package com.sortingalgorithm.service.helperutil.generator;
+
+import com.sortingalgorithm.service.helperutil.randomization.FloatDefaultRandomization;
+
+public class FloatArrayGenerator implements Generator<Float> {
+	@Override
+	public Float[] generateArray(int size) {
+		Float[] elements =  new Float[size];
+		for(int i = 0; i < size; i++){
+			elements[i] = new FloatDefaultRandomization().getRandomElement();
+		}
+		return elements;
+	}
+}
