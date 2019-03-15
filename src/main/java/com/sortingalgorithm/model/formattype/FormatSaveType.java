@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.model.formattype;
+package com.sortingalgorithm.model.formattype;
 
-import com.sortingalgorithm.service.model.pojo.DataAnalysis;
+import com.sortingalgorithm.model.pojo.DataAnalysis;
 
 import java.io.IOException;
 

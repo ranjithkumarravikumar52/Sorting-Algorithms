@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.model.formattype;
+package com.sortingalgorithm.model.formattype;
 
-import com.sortingalgorithm.service.model.pojo.DataAnalysis;
+import com.sortingalgorithm.model.pojo.DataAnalysis;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -14,14 +14,14 @@ import java.util.Map;
 import java.util.Set;
 
 
-public class ExcelFormat implements FormatType {
+public class ExcelFormatTypeImpl implements FormatType {
 
     private static int i = 1;
     private static FileOutputStream out;
     private static Map<String, Object[]> resultMap = new LinkedHashMap<>();
     private String[] headers;
 
-    public ExcelFormat(String[] headers) {
+    public ExcelFormatTypeImpl(String[] headers) {
         this.headers = headers;
         initializeHeaders();
     }

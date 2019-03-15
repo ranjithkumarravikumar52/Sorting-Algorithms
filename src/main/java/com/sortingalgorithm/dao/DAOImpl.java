@@ -1,7 +1,7 @@
 package com.sortingalgorithm.dao;
 
-import com.sortingalgorithm.service.model.formattype.FormatType;
-import com.sortingalgorithm.service.model.pojo.DataAnalysis;
+import com.sortingalgorithm.model.formattype.FormatType;
+import com.sortingalgorithm.model.pojo.DataAnalysis;
 
 public class DAOImpl implements DAO{
 

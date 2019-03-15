@@ -1,8 +1,8 @@
 package com.sortingalgorithm.controller;
 
 import com.sortingalgorithm.config.AppConfig;
-import com.sortingalgorithm.service.util.generator.CharacterArrayGenerator;
 import com.sortingalgorithm.service.sortalgorithms.SortAlgorithm;
+import com.sortingalgorithm.service.util.generator.CharacterArrayGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -47,7 +47,7 @@ public class SimulationApp {
         * model.save(dataAnalysis);
         *
         * ======= DAO Layer ==========
-        * FormatType formatType = new ExcelFormat(new String[]{sortAlgorithm.getClassName(), Data Size, Total Time);
+        * FormatType formatType = new ExcelFormatTypeImpl(new String[]{sortAlgorithm.getClassName(), Data Size, Total Time);
         * formatType.save(dataAnalysis);
         *
         * */

@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.model.metric;
+package com.sortingalgorithm.model.metric;
 
-public class TimeMetric<T extends Long> implements MetricMeasure<Long>{
+public class TimeMetricMeasureImpl<T extends Long> implements MetricMeasure<Long>{
 
     private Long startTime;
     private Long endTime;

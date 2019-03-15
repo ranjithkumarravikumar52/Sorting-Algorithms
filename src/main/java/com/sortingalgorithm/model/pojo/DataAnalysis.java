@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.model.pojo;
+package com.sortingalgorithm.model.pojo;
 
-import com.sortingalgorithm.service.model.metric.MetricMeasure;
+import com.sortingalgorithm.model.metric.MetricMeasure;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
