@@ -25,4 +25,9 @@ public class InsertionSort<T extends Comparable<T>> implements SortAlgorithm<T> 
         if(inputArray == null || inputArray.length == 0) return inputArray;
         return insertionSort(inputArray);
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

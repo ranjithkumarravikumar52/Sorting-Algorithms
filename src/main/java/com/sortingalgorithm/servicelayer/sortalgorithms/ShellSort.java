@@ -31,4 +31,9 @@ public class ShellSort<T extends Comparable<T>> implements SortAlgorithm<T> {
         if(inputArray == null || inputArray.length == 0) return inputArray;
         return shellSort(inputArray);
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

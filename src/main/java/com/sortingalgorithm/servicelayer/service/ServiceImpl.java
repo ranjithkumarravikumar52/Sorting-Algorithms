@@ -1,7 +1,7 @@
 package com.sortingalgorithm.servicelayer.service;
 
+import com.sortingalgorithm.config.AppConfig;
 import com.sortingalgorithm.dao.DAO;
-import com.sortingalgorithm.dao.DAOImpl;
 import com.sortingalgorithm.model.formattype.ExcelFormatTypeImpl;
 import com.sortingalgorithm.model.formattype.FormatType;
 import com.sortingalgorithm.model.metric.MetricMeasure;
@@ -9,13 +9,21 @@ import com.sortingalgorithm.model.metric.TimeMetricMeasureImpl;
 import com.sortingalgorithm.model.pojo.DataAnalysis;
 import com.sortingalgorithm.servicelayer.helperutil.generator.IntegerArrayGenerator;
 import com.sortingalgorithm.servicelayer.sortalgorithms.SortAlgorithm;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ServiceImpl implements Service {
+
+	private static final Logger log = LoggerFactory.getLogger(ServiceImpl.class);
+
 	@Override
-	public boolean doSimulation(List<SortAlgorithm>  sortAlgorithmList, int simulationCount, int dataSize) {
+	public boolean doSimulation(List<SortAlgorithm> sortAlgorithmList, int simulationCount, int dataSize) {
 
 		FormatType formatType = new ExcelFormatTypeImpl(new String[]{"Sort Algorithm", "Data size", "Time Taken"});
 		List<DataAnalysis> dataAnalysisList = new ArrayList<>();
@@ -31,6 +39,8 @@ public class ServiceImpl implements Service {
 
 				//perform sort
 				Long startTime = System.currentTimeMillis();
+				// log.info("Sorting...{}", sortAlgorithm.getClass().getSimpleName());
+				// log.info("Data size: {}", dataSize);
 				sortAlgorithm.sort(copyArrays);
 				Long endTime = System.currentTimeMillis();
 
@@ -43,7 +53,8 @@ public class ServiceImpl implements Service {
 		}
 
 		//create DAO object and call save
-		DAO dao = new DAOImpl();
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		DAO dao = context.getBean("DAOImpl", DAO.class);
 		return dao.saveDataToRepo(dataAnalysisList, formatType);
 	}
 
@@ -62,6 +73,7 @@ public class ServiceImpl implements Service {
 	private DataAnalysis getDataAnalysis(SortAlgorithm<Integer> sortAlgorithm, Integer[] copyArrays, Long startTime, Long endTime) {
 		MetricMeasure<Long> metricMeasure = new TimeMetricMeasureImpl<>();
 		metricMeasure.setTotalMetric(endTime - startTime);
+		// log.info("Time taken: {}", endTime - startTime);
 		return new DataAnalysis(sortAlgorithm.getClass().getSimpleName(), copyArrays.length, metricMeasure);
 	}
 }
