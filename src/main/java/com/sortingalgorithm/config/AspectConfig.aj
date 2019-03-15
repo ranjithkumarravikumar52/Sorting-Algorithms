@@ -17,8 +17,8 @@ public class AspectConfig {
     @Pointcut("execution(public Integer[] sort(..))")
     private void forSortAlgorithmPackage(){}
 
-    //point cut declaration for util package
-    @Pointcut("execution(* com.sortingalgorithm.util.*.*(..))")
+    //point cut declaration for daolayer package
+    @Pointcut("execution(* com.sortingalgorithm.daolayer.*.*(..))")
     private void forUtilPackage(){}
 
     //add @Before
