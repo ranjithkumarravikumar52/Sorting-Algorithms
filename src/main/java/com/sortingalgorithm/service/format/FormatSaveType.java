@@ -1,6 +1,6 @@
-package com.sortingalgorithm.daolayer.format;
+package com.sortingalgorithm.service.format;
 
-import com.sortingalgorithm.daolayer.model.DataAnalysis;
+import com.sortingalgorithm.service.model.DataAnalysis;
 
 import java.io.IOException;
 

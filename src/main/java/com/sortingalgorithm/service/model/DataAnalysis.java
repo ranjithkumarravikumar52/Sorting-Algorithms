@@ -1,4 +1,4 @@
-package com.sortingalgorithm.daolayer.model;
+package com.sortingalgorithm.service.model;
 
 import com.sortingalgorithm.service.metric.MetricMeasure;
 import lombok.Getter;
