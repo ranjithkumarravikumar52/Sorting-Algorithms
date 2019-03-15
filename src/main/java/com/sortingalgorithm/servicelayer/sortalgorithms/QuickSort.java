@@ -34,7 +34,7 @@ public class QuickSort<T extends Comparable<T>> implements SortAlgorithm<T> {
         }
     }
 
-    public void doQuickSort(T[] a, int p, int r) {
+    private void doQuickSort(T[] a, int p, int r) {
         if (p < r) {
             int q = partition(a, p, r);
             doQuickSort(a, p, q);
@@ -44,6 +44,7 @@ public class QuickSort<T extends Comparable<T>> implements SortAlgorithm<T> {
 
     @Override
     public T[] sort(T[] inputArray) {
+        if(inputArray == null || inputArray.length == 0) return inputArray;
         return quickSort(inputArray);
     }
 }
