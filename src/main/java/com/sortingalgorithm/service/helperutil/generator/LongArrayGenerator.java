@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.util.generator;
+package com.sortingalgorithm.service.helperutil.generator;
 
-import com.sortingalgorithm.service.util.randomization.LongDefaultRandomization;
+import com.sortingalgorithm.service.helperutil.randomization.LongDefaultRandomization;
 
 public class LongArrayGenerator implements Generator<Long> {
 	@Override

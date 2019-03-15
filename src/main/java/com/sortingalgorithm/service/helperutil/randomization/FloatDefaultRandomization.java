@@ -1,4 +1,4 @@
-package com.sortingalgorithm.service.util.randomization;
+package com.sortingalgorithm.service.helperutil.randomization;
 
 import java.util.Random;
 
