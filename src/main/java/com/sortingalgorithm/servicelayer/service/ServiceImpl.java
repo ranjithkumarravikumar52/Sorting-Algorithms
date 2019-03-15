@@ -11,7 +11,6 @@ import com.sortingalgorithm.servicelayer.helperutil.generator.IntegerArrayGenera
 import com.sortingalgorithm.servicelayer.sortalgorithms.SortAlgorithm;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ServiceImpl implements Service {
@@ -25,29 +24,44 @@ public class ServiceImpl implements Service {
 			//generate array
 			Integer[] integers = new IntegerArrayGenerator().generateArray(dataSize);
 
-			//one round of simulation for all the sortalgorithm types
+			//one round of simulation for all the sort-algorithm types
 			for (SortAlgorithm<Integer> sortAlgorithm : sortAlgorithmList) {
-				System.out.println(sortAlgorithm.getClass().getSimpleName());
+				//get a copy of array
+				Integer[] copyArrays = getIntegersCopy(integers);
 
-				Integer[] copyArrays = new Integer[integers.length];
-				System.arraycopy(integers, 0, copyArrays, 0, integers.length);
-
-
-				System.out.println("Before sort " + Arrays.toString(integers));
+				//perform sort
 				Long startTime = System.currentTimeMillis();
-				Integer[] sortedOutput = sortAlgorithm.sort(copyArrays);
+				sortAlgorithm.sort(copyArrays);
 				Long endTime = System.currentTimeMillis();
-				System.out.println("After sort " + Arrays.toString(sortedOutput));
 
+				//get data analysis object
+				DataAnalysis dataAnalysis = getDataAnalysis(sortAlgorithm, copyArrays, startTime, endTime);
 
-				MetricMeasure<Long> metricMeasure = new TimeMetricMeasureImpl<>();
-				metricMeasure.setTotalMetric(endTime - startTime);
-				DataAnalysis dataAnalysis = new DataAnalysis(sortAlgorithm.getClass().getSimpleName(), copyArrays.length, metricMeasure);
+				//add it to Data analysis list
 				dataAnalysisList.add(dataAnalysis);
 			}
 		}
 
+		//create DAO object and call save
 		DAO dao = new DAOImpl();
 		return dao.saveDataToRepo(dataAnalysisList, formatType);
+	}
+
+	/**
+	 * Copy arrays to a buffer array
+	 */
+	private Integer[] getIntegersCopy(Integer[] integers) {
+		Integer[] copyArrays = new Integer[integers.length];
+		System.arraycopy(integers, 0, copyArrays, 0, integers.length);
+		return copyArrays;
+	}
+
+	/**
+	 * set metric and form a POJO object
+	 */
+	private DataAnalysis getDataAnalysis(SortAlgorithm<Integer> sortAlgorithm, Integer[] copyArrays, Long startTime, Long endTime) {
+		MetricMeasure<Long> metricMeasure = new TimeMetricMeasureImpl<>();
+		metricMeasure.setTotalMetric(endTime - startTime);
+		return new DataAnalysis(sortAlgorithm.getClass().getSimpleName(), copyArrays.length, metricMeasure);
 	}
 }
