@@ -66,5 +66,8 @@ public class MergeSort<T extends Comparable<? super T>> implements SortAlgorithm
         if(inputArray == null || inputArray.length == 0) return inputArray;
         return mergeSort(inputArray);
     }
-
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

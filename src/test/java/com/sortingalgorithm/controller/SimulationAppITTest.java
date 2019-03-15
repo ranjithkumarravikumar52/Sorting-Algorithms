@@ -2,14 +2,13 @@ package com.sortingalgorithm.controller;
 
 import com.sortingalgorithm.config.AppConfig;
 import com.sortingalgorithm.servicelayer.service.Service;
-import com.sortingalgorithm.servicelayer.service.ServiceImpl;
 import com.sortingalgorithm.servicelayer.sortalgorithms.SortAlgorithm;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SimulationAppITTest {
@@ -18,14 +17,19 @@ public class SimulationAppITTest {
 
 	@Test
 	public void doOneRoundOfSimulationCallingServiceOnlyOnce(){
-		AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-		SortAlgorithm[] getAllSortClasses = annotationConfigApplicationContext.getBean("getAllSortClasses", SortAlgorithm[].class);
-		List<SortAlgorithm> sortAlgorithmsList = Arrays.asList(getAllSortClasses);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
+		List<SortAlgorithm> list = new ArrayList<>();
+		list.add(context.getBean("bubbleSort", SortAlgorithm.class));
+		list.add(context.getBean("insertionSort", SortAlgorithm.class));
+		list.add(context.getBean("mergeSort", SortAlgorithm.class));
+		list.add(context.getBean("quickSort", SortAlgorithm.class));
+		list.add(context.getBean("selectionSort", SortAlgorithm.class));
+		list.add(context.getBean("shellSort", SortAlgorithm.class));
 
 		//Create Service layer object
-		Service service = new ServiceImpl();
-		service.doSimulation(sortAlgorithmsList,1, 5);
+		Service service = context.getBean("serviceImpl", Service.class);
+		service.doSimulation(list,1, 5);
 
 	}
 

@@ -41,4 +41,9 @@ public class BubbleSort<T extends Comparable<T>> implements SortAlgorithm<T> {
         array[secondIndex] = temp;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
