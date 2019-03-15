@@ -1,8 +1,8 @@
 package com.sortingalgorithm.controller;
 
 import com.sortingalgorithm.config.AppConfig;
-import com.sortingalgorithm.service.sortalgorithms.SortAlgorithm;
-import com.sortingalgorithm.service.helperutil.generator.CharacterArrayGenerator;
+import com.sortingalgorithm.servicelayer.helperutil.generator.CharacterArrayGenerator;
+import com.sortingalgorithm.servicelayer.sortalgorithms.SortAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -34,8 +34,8 @@ public class SimulationApp {
         * Our process flow will look something like this
         * ===== CONTROLLER LAYER ======
         * Controller controller = new Controller();
-        * Service service = new Service(SortAlgorithm sortAlgorithm, MetricMeasure metricMeasure, FormatType formatType);
-        * service.runSimulation(inputArray);
+        * Service servicelayer = new Service(SortAlgorithm sortAlgorithm, MetricMeasure metricMeasure, FormatType formatType);
+        * servicelayer.runSimulation(inputArray);
         *
         * ======== SERVICE LAYER ========
         * Long startTime;
