@@ -12,12 +12,9 @@ public class TimeMetricMeasureImpl<T extends Long> implements MetricMeasure<Long
         return totalTime;
     }
 
-    public void startTime(){
-        this.startTime = System.currentTimeMillis();
-    }
-
-    public void endTime(){
-        this.endTime = System.currentTimeMillis();
+    @Override
+    public void setTotalMetric(Long totalTime) {
+        this.totalTime = totalTime;
     }
 
     @Override
