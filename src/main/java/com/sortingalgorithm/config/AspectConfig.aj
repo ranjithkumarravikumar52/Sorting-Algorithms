@@ -11,39 +11,35 @@ import org.springframework.stereotype.Component;
 @Component
 public class AspectConfig {
     /**application logger**/
-    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(AspectConfig.class);
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AspectConfig.class);
 
     //point cut declaration for sortalgorithms package
-    @Pointcut("execution(public Integer[] sort(..))")
+    @Pointcut("execution(public * sort(..))")
     private void forSortAlgorithmPackage(){}
 
-    //point cut declaration for daolayer package
-    @Pointcut("execution(* com.sortingalgorithm.daolayer.*.*(..))")
-    private void forUtilPackage(){}
-
     //add @Before
-    @Before("forSortAlgorithmPackage() || forUtilPackage()")
+    @Before("forSortAlgorithmPackage()")
     public void before(JoinPoint joinPoint){
         //display method we are calling
         String methodSignature = joinPoint.getSignature().toShortString();
-        LOG.info("===> in @Before: calling method : "+methodSignature);
+        log.info("===> in @Before: calling method : "+methodSignature);
 
         //display the arguments to the method
         Object[] args = joinPoint.getArgs();
         for (Object arg : args) {
-            LOG.info("====> arguments: " + arg.toString());
+            log.info("====> arguments: " + arg.toString());
         }
     }
 
     //add @AfterReturning
-    @AfterReturning(pointcut = "forSortAlgorithmPackage() || forUtilPackage()", returning = "result")
+    @AfterReturning(pointcut = "forSortAlgorithmPackage()", returning = "result")
     public void afterReturning(JoinPoint joinPoint, Object result) {
         //display method we are returning from
         String methodSignature = joinPoint.getSignature().toShortString();
-        LOG.info("====> in @AfterReturning: from method: " + methodSignature);
+        log.info("====> in @AfterReturning: from method: " + methodSignature);
 
         //display data we are returning
-        LOG.info( "=====> result: " + result);
+        log.info( "=====> result: " + result);
     }
 
 }
