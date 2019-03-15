@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.generator;
+package com.sortingalgorithm.service.util.generator;
 
-import com.sortingalgorithm.service.randomization.ByteDefaultRandomization;
+import com.sortingalgorithm.service.util.randomization.ByteDefaultRandomization;
 
 public class ByteArrayGenerator implements Generator<Byte> {
 	@Override

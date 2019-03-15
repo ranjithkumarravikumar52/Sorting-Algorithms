@@ -1,4 +1,4 @@
-package com.sortingalgorithm.service.generator;
+package com.sortingalgorithm.service.util.generator;
 
 /**
  * To generate an array of elements of type T

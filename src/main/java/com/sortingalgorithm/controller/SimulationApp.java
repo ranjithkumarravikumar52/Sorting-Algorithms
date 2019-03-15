@@ -1,7 +1,7 @@
 package com.sortingalgorithm.controller;
 
 import com.sortingalgorithm.config.AppConfig;
-import com.sortingalgorithm.service.generator.CharacterArrayGenerator;
+import com.sortingalgorithm.service.util.generator.CharacterArrayGenerator;
 import com.sortingalgorithm.service.sortalgorithms.SortAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

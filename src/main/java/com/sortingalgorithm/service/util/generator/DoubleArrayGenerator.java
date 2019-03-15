@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.generator;
+package com.sortingalgorithm.service.util.generator;
 
-import com.sortingalgorithm.service.randomization.DoubleDefaultRandomization;
+import com.sortingalgorithm.service.util.randomization.DoubleDefaultRandomization;
 
 public class DoubleArrayGenerator implements Generator<Double> {
 	@Override

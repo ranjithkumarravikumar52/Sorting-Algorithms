@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.format;
+package com.sortingalgorithm.service.model.formattype;
 
-import com.sortingalgorithm.service.model.DataAnalysis;
+import com.sortingalgorithm.service.model.pojo.DataAnalysis;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;

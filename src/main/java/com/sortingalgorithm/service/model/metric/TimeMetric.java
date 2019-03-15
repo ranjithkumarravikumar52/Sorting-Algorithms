@@ -1,4 +1,4 @@
-package com.sortingalgorithm.service.metric;
+package com.sortingalgorithm.service.model.metric;
 
 public class TimeMetric<T extends Long> implements MetricMeasure<Long>{
 

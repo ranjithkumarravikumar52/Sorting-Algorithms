@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.generator;
+package com.sortingalgorithm.service.util.generator;
 
-import com.sortingalgorithm.service.randomization.IntegerDefaultRandomization;
+import com.sortingalgorithm.service.util.randomization.IntegerDefaultRandomization;
 
 public class IntegerArrayGenerator implements Generator<Integer> {
 

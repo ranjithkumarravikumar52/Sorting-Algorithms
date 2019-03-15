@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.generator;
+package com.sortingalgorithm.service.util.generator;
 
-import com.sortingalgorithm.service.randomization.ShortDefaultRandomization;
+import com.sortingalgorithm.service.util.randomization.ShortDefaultRandomization;
 
 public class ShortArrayGenerator implements Generator<Short> {
 	@Override
