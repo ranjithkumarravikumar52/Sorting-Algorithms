@@ -18,9 +18,6 @@ public class SimulationApp {
         //Get sort algorithm beans from spring container
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        SortAlgorithm<Integer> bubbleSort = context.getBean("bubbleSort", SortAlgorithm.class);
-
-
         List<SortAlgorithm> list = new ArrayList<>();
         list.add(context.getBean("bubbleSort", SortAlgorithm.class));
         list.add(context.getBean("insertionSort", SortAlgorithm.class));
@@ -31,7 +28,10 @@ public class SimulationApp {
 
         //Get Service layer bean
         Service service = context.getBean("serviceImpl", Service.class);
-        service.doSimulation(list,1, 5);
+        for(int dataSize = 5; dataSize < 1_000; dataSize = dataSize + 5){
+            service.doSimulation(list,2, dataSize);
+        }
+
     }
 
 }

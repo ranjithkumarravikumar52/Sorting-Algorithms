@@ -31,7 +31,9 @@ public class ExcelFormatTypeImpl implements FormatType {
     }
 
     private void initializeHeaders() {
-        resultMap.put(Integer.toString(i++), this.headers);
+        if(i == 1){
+            resultMap.put(Integer.toString(i++), this.headers);
+        }
     }
 
     @Override

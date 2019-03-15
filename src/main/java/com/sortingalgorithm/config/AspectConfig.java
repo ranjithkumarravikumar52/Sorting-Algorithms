@@ -48,7 +48,7 @@ public class AspectConfig {
 		log.info("<===== After returning from method: " + methodSignature);
 
 		//display data we are returning
-		log.info( "<===== Result: " + result);
+		log.info( "<===== Result: " + result.toString());
 	}
 
 }
