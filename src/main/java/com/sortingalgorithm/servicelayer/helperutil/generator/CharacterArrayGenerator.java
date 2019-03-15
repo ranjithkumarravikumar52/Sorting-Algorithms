@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.helperutil.generator;
+package com.sortingalgorithm.servicelayer.helperutil.generator;
 
-import com.sortingalgorithm.service.helperutil.randomization.CharacterDefaultRandomization;
+import com.sortingalgorithm.servicelayer.helperutil.randomization.CharacterDefaultRandomization;
 
 public class CharacterArrayGenerator implements Generator<Character> {
 	@Override

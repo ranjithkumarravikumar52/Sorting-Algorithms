@@ -1,4 +1,4 @@
-package com.sortingalgorithm.service.sortalgorithms;
+package com.sortingalgorithm.servicelayer.sortalgorithms;
 
 import org.springframework.stereotype.Component;
 

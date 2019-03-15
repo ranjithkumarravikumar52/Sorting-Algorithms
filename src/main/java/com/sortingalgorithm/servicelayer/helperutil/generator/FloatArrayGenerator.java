@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.helperutil.generator;
+package com.sortingalgorithm.servicelayer.helperutil.generator;
 
-import com.sortingalgorithm.service.helperutil.randomization.FloatDefaultRandomization;
+import com.sortingalgorithm.servicelayer.helperutil.randomization.FloatDefaultRandomization;
 
 public class FloatArrayGenerator implements Generator<Float> {
 	@Override

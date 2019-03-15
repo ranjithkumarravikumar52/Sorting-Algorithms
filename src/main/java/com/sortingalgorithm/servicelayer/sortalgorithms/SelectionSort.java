@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sortingalgorithm.service.sortalgorithms;
+package com.sortingalgorithm.servicelayer.sortalgorithms;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.sortingalgorithm.service.helperutil.generator;
+package com.sortingalgorithm.servicelayer.helperutil.generator;
 
 /**
  * To generate an array of elements of type T

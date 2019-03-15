@@ -1,4 +1,4 @@
-package com.sortingalgorithm.service.sortalgorithms;
+package com.sortingalgorithm.servicelayer.sortalgorithms;
 
 /**
  * <p>Every Sort Algorithm is imagined as a Class. This class has two fields mandatory for any SortAlgorithm.</p>

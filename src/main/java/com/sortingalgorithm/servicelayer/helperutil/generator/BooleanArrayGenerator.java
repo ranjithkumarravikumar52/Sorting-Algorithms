@@ -1,6 +1,6 @@
-package com.sortingalgorithm.service.helperutil.generator;
+package com.sortingalgorithm.servicelayer.helperutil.generator;
 
-import com.sortingalgorithm.service.helperutil.randomization.BooleanDefaultRandomization;
+import com.sortingalgorithm.servicelayer.helperutil.randomization.BooleanDefaultRandomization;
 
 public class BooleanArrayGenerator implements Generator<Boolean> {
 	@Override
