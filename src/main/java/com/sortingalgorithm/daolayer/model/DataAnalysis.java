@@ -1,8 +1,9 @@
-package com.sortingalgorithm.daolayer.dao;
+package com.sortingalgorithm.daolayer.model;
 
 import com.sortingalgorithm.service.metric.MetricMeasure;
 
-public abstract class DataAnalysis<T> {
+
+public class DataAnalysis {
     private String sortAlgorithmName;
     private int dataSize;
     private MetricMeasure metricMeasure;
@@ -14,7 +15,7 @@ public abstract class DataAnalysis<T> {
     }
 
 
-    public String getSortAlgorithmName() {
+    /*public String getSortAlgorithmName() {
         return sortAlgorithmName;
     }
 
@@ -24,7 +25,7 @@ public abstract class DataAnalysis<T> {
 
     public MetricMeasure getMetricMeasure() {
         return metricMeasure;
-    }
+    }*/
 
     @Override
     public String toString() {

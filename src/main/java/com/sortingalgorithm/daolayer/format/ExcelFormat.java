@@ -1,6 +1,6 @@
 package com.sortingalgorithm.daolayer.format;
 
-import com.sortingalgorithm.daolayer.dao.DataAnalysis;
+import com.sortingalgorithm.daolayer.model.DataAnalysis;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;

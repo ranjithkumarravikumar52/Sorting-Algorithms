@@ -1,6 +1,6 @@
 package com.sortingalgorithm.daolayer.format;
 
-import com.sortingalgorithm.daolayer.dao.DataAnalysis;
+import com.sortingalgorithm.daolayer.model.DataAnalysis;
 
 import java.io.IOException;
 

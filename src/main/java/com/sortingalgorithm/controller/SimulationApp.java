@@ -43,8 +43,8 @@ public class SimulationApp {
         * Long endTime;
         * metricMeasure.setTotalTime(endTime - startTime);
         * DataAnalysis dataAnalysis = new DataAnalysis(sortAlgorithm.getClassName(), inputArray.length(), metricMeasure.getTotalTime);
-        * DAO dao = new DAO(FormatType formatType, DataAnalysis dataAnalysis);
-        * dao.save(dataAnalysis);
+        * DAO model = new DAO(FormatType formatType, DataAnalysis dataAnalysis);
+        * model.save(dataAnalysis);
         *
         * ======= DAO Layer ==========
         * FormatType formatType = new ExcelFormat(new String[]{sortAlgorithm.getClassName(), Data Size, Total Time);

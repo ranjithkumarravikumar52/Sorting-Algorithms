@@ -1,7 +1,7 @@
 package com.sortingalgorithm.daolayer.datapersistence;
 
-import com.sortingalgorithm.daolayer.dao.DataAnalysis;
 import com.sortingalgorithm.daolayer.format.FormatType;
+import com.sortingalgorithm.daolayer.model.DataAnalysis;
 
 public class DataPersistence {
 
