@@ -1,8 +1,11 @@
 package com.sortingalgorithm.daolayer.model;
 
 import com.sortingalgorithm.service.metric.MetricMeasure;
+import lombok.Getter;
+import lombok.ToString;
 
-
+@Getter
+@ToString
 public class DataAnalysis {
     private String sortAlgorithmName;
     private int dataSize;
@@ -14,25 +17,4 @@ public class DataAnalysis {
         this.metricMeasure = metricMeasure;
     }
 
-
-    /*public String getSortAlgorithmName() {
-        return sortAlgorithmName;
-    }
-
-    public int getDataSize() {
-        return dataSize;
-    }
-
-    public MetricMeasure getMetricMeasure() {
-        return metricMeasure;
-    }*/
-
-    @Override
-    public String toString() {
-        return "DataAnalysis{" +
-                "sortAlgorithmName='" + sortAlgorithmName + '\'' +
-                ", dataSize=" + dataSize +
-                ", metricMeasure=" + metricMeasure.getTotalMetric() +
-                '}';
-    }
 }
